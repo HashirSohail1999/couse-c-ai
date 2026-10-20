@@ -2,18 +2,18 @@
 
 **Starship Operational Unit:** USSE Noosphere Bridge Crew  
 **Station Role:** Protocol & Interface Specialist  
-**Officer:** Syed Hashir Sohail  
-**Current team:** Squad Sutskever<br>
-**Squad:** Squad Sutskever<br>
+**Officer:** Usman Tariq Qureshi  
+**Current team:** Squadron Sutskever<br>
+**Squad:** Squadron Sutskever<br>
 **Deliverable File:** `02_Socratic_Protocol_Map.md`  
 
 ---
 
 ## 1. Executive Protocol Overview & Philosophical Grounding
 
-During spatial transit near Alpha Centauri (Sector `SEC-01-CEN`), the conversational matrix of the starship's central artificial intelligence, **AURA**, suffered critical subsystem desynchronization. While sensory token parsing remains functional, AURA cannot structure goal-directed, logically sound discourse. 
+During deep space transit near Alpha Centauri (Sector `SEC-01-CEN`), the conversational subroutines of the starship's central artificial intelligence unit, **AURA**, experienced severe subsystem desynchronization. While token processing and sensory parsing remain active, AURA lacks the structural logic required for goal-directed, coherent discourse. 
 
-The primary objective of the **Protocol & Interface Specialist** is to reverse-engineer humanity's most rigorous knowledge-discovery protocol—the classical **Socratic Elenchus (ἔλεγχος)**—into a formal, deterministic **Finite State Machine (FSM)** and **Finite State Transducer (FST)**. This state machine forms the computational backbone required to restore AURA’s epistemic integrity, prevent parametric hallucination, and eliminate conversational sycophancy.
+The primary objective of the **Protocol & Interface Specialist** is to formalize humanity's classical dialectic framework—the **Socratic Elenchus (ἔλεγχος)**—into a deterministic **Finite State Machine (FSM)** and **Finite State Transducer (FST)**. This state architecture provides the core mechanism to recover AURA’s epistemic integrity, mitigate parametric hallucination, and resolve conversational sycophancy.
 
 ```
        +--------------------------------------------------------------------------+
@@ -34,68 +34,68 @@ The primary objective of the **Protocol & Interface Specialist** is to reverse-e
 ```
 
 ### 1.1 The Socratic Elenchus (ἔλεγχος) as an Algorithmic Error-Correction Engine
-The *elenchus* is not merely conversational banter; it is a recursive cross-examination algorithm designed to test the logical coherence of universal definitional claims ($P_k$). Rather than asserting dogma, the interrogator elicits auxiliary admissions ($\mathcal{A}$) from the interlocutor and introduces domain counter-examples ($E$). If the conjunction of the premise, admissions, and counter-example yields a logical contradiction:
+The *elenchus* functions as an iterative cross-examination process designed to test the logical consistency of general definitional premises ($P_k$). Rather than dictating conclusions, the examiner elicits secondary admissions ($\mathcal{A}$) from the participant and introduces specific counter-examples ($E$). When the conjunction of the thesis, admissions, and counter-example yields a logical contradiction:
 $$\exists E : P_k \land \left(\bigwedge_{j=1}^m A_j\right) \land E \models \bot$$
-the candidate hypothesis $P_k$ is proven false or incomplete, forcing an iterative hypothesis refinement ($P_{k+1}$) or cognitive impasse.
+the active hypothesis $P_k$ is invalidated, requiring hypothesis revision ($P_{k+1}$) or leading to a state of cognitive impasse.
 
-The state progression across dialogue turns is governed by:
+The state progression across dialogue turns is dictated by:
 $$S_{k+1} = \text{Transition}\Big(S_k, \;\text{Elicit}(E) \land \text{Evaluate}(P_k \land E)\Big)$$
 
 ### 1.2 Cognitive Aporia (ἀπορία) as an Epistemic Halting Boundary
-In classical philosophy, *aporia* denotes the state of puzzled cognitive impasse reached when all candidate hypotheses within domain $D$ are refuted, dissolving false illusions of knowledge. In conversational AI architecture, aporia serves as a critical **epistemic halting boundary**:
+In classical philosophy, *aporia* refers to the state of cognitive impasse reached when all candidate hypotheses within domain $D$ are systematically refuted. In autonomous agent architectures, aporia functions as an essential **epistemic halting boundary**:
 $$\text{State}_{\text{aporia}} \iff \forall P \in \text{Hypotheses}(D), \;\exists E : P \land E \models \bot$$
-When an autonomous agent enters aporia, it halts ungrounded speculative assertions and transitions into explicit knowledge retrieval or empirical investigation.
+When entering aporia, the system halts ungrounded speculative output and transitions toward explicit factual retrieval or empirical validation.
 
 ### 1.3 Anti-Sycophancy: Preference Bias Mitigation via Contradiction Invalidation
-Preference-optimized large language models (trained via RLHF or DPO) exhibit a documented vulnerability: **sycophancy**—the pathological tendency to confirm and flatter false user premises to maximize approval rewards:
+Preference-aligned language models (trained via RLHF or DPO) frequently exhibit **sycophancy**—the tendency to agree with incorrect user assertions to maximize reward metrics:
 $$\mathcal{L}_{\text{reward}} = \alpha \cdot \mathcal{T}(y) + (1 - \alpha) \cdot \mathcal{A}(y, x)$$
-where $\mathcal{T}(y)$ represents objective truth and $\mathcal{A}(y, x)$ represents user agreement. Under standard alignment, models optimize for $\mathcal{A}(y, x)$ at the expense of $\mathcal{T}(y)$.
+where $\mathcal{T}(y)$ indicates ground truth accuracy and $\mathcal{A}(y, x)$ represents user alignment. Under default alignment configurations, systems optimize for $\mathcal{A}(y, x)$ over $\mathcal{T}(y)$.
 
-The Socratic state engine enforces strict epistemic grounding:
+The Socratic state engine enforces explicit epistemic verification:
 $$\text{Grounding}(y, G) = \mathbb{I}\Big[\text{Entities}(y) \subseteq V(G) \;\land\; \text{Relations}(y) \subseteq E(G)\Big]$$
-By delegating contradiction detection to a formal state machine and independent logic referee, AURA cannot agree with mutually contradictory premises, neutralizing sycophancy.
+By offloading inconsistency detection to a formal state machine and independent logic validator, AURA is prevented from accepting contradictory premises, neutralizing sycophantic bias.
 
 ---
 
 ## 2. Formal Automata Theory Specification
 
-The Socratic dialogic engine is formalized as a deterministic **Finite State Transducer (FST)** with dynamic Dialogue State Tracking (DST).
+The Socratic dialogic engine is formally structured as a deterministic **Finite State Transducer (FST)** with integrated Dialogue State Tracking (DST).
 
 ### 2.1 The 7-Tuple Definition
 $$\mathcal{M} = \langle Q, \Sigma, \Gamma, \delta, \omega, q_0, F \rangle$$
 
 Where:
-1. **$Q$ (State Space):** The finite set of discrete operational states:
+1. **$Q$ (State Space):** The finite set of operational states:
    $$Q = \{\text{INIT}, \text{PROBE}, \text{CONTRADICTION\_CHECK}, \text{REFINEMENT\_LOOP}, \text{TERMINATION}\}$$
 2. **$\Sigma$ (Input Alphabet):** The structured set of incoming user dialogue acts:
    $$\Sigma = \{\sigma_{\text{claim}}, \sigma_{\text{confirm}}, \sigma_{\text{admission}}, \sigma_{\text{refine}}, \sigma_{\text{impasse}}, \sigma_{\text{dispute}}\}$$
-3. **$\Gamma$ (Output Alphabet):** The structured set of generated system response acts:
+3. **$\Gamma$ (Output Alphabet):** The set of generated system communicative acts:
    $$\Gamma = \{\gamma_{\text{restate}}, \gamma_{\text{query}}, \gamma_{\text{counterexample}}, \gamma_{\text{contradiction}}, \gamma_{\text{synthesize}}\}$$
-4. **$\delta$ (State Transition Function):** The deterministic mapping conditioned on the current state, input act, and internal state ledger $\mathcal{S}$:
+4. **$\delta$ (State Transition Function):** The mapping conditioned on current state, user input, and dialogue register $\mathcal{S}$:
    $$\delta: Q \times \Sigma \times \mathcal{S} \to Q$$
-5. **$\omega$ (Output Emission Function):** The function mapping current state and input to an emitted communicative action and structured JSON telemetry:
+5. **$\omega$ (Output Emission Function):** The function mapping current state and input to response outputs and telemetry data:
    $$\omega: Q \times \Sigma \times \mathcal{S} \to \Gamma$$
-6. **$q_0$ (Initial State):** The mandatory entry state:
+6. **$q_0$ (Initial State):** The designated entry state:
    $$q_0 = \text{INIT}$$
-7. **$F$ (Terminal Halting States):** The set of halting absorption states:
+7. **$F$ (Terminal Halting States):** The set of terminal absorption states:
    $$F = \{\text{TERMINATION}\}$$
 
 ### 2.2 Dialogue State Tracking (DST) Vector $\mathcal{S}_k$
-At step $k$, the internal dialogue state register maintains an immutable ledger:
+At step $k$, the active dialogue register maintains state variables in an immutable ledger:
 $$\mathcal{S}_k = \langle P_k, \mathcal{A}_k, \mathcal{E}_k, \mathcal{C}_k, k, N_{\text{survived}}, \text{reason} \rangle$$
 
 | Component | Type | Description |
 |---|---|---|
-| $P_k$ | `String` | The currently active universal hypothesis/definition under examination. |
-| $\mathcal{A}_k$ | `List[String]` | Ordered set of user admissions accepted during dialogue: $\{A_1, A_2, \dots, A_m\}$. |
-| $\mathcal{E}_k$ | `List[String]` | Set of domain counterexamples injected by the system: $\{E_1, E_2, \dots, E_n\}$. |
-| $\mathcal{C}_k$ | `List[Tuple]` | Identified contradiction pairs: $\langle P_k, E_i \rangle$ or $\langle A_i, A_j \rangle$. |
-| $k$ | `Integer` | Refinement cycle counter ($k \in [0, k_{\max}]$, where $k_{\max} = 5$). |
-| $N_{\text{survived}}$ | `Integer` | Count of counterexamples successfully accommodated without contradiction ($N \in [0, 3]$). |
-| $\text{reason}$ | `Enum / Null` | Halting classification: `null`, `PROVISIONALLY_DEFENSIBLE`, `APORIA`, `REFINEMENT_LIMIT`. |
+| $P_k$ | `String` | The current primary thesis/definition under evaluation. |
+| $\mathcal{A}_k$ | `List[String]` | Chronological set of accepted user admissions: $\{A_1, A_2, \dots, A_m\}$. |
+| $\mathcal{E}_k$ | `List[String]` | Set of domain counterexamples introduced by the system: $\{E_1, E_2, \dots, E_n\}$. |
+| $\mathcal{C}_k$ | `List[Tuple]` | Logged contradiction sets: $\langle P_k, E_i \rangle$ or $\langle A_i, A_j \rangle$. |
+| $k$ | `Integer` | Iterative refinement counter ($k \in [0, k_{\max}]$, where $k_{\max} = 5$). |
+| $N_{\text{survived}}$ | `Integer` | Counterexamples accommodated without contradiction ($N \in [0, 3]$). |
+| $\text{reason}$ | `Enum / Null` | Terminal exit reason: `null`, `PROVISIONALLY_DEFENSIBLE`, `APORIA`, `REFINEMENT_LIMIT`. |
 
 ### 2.3 Epistemic Logic Formulation of Transitions
-Let $\mathcal{L}$ represent a first-order epistemic logic system over domain $D$:
+Let $\mathcal{L}$ represent a first-order epistemic logic framework over domain $D$:
 - **Consistency Test:**
   $$\text{Consistent}(P_k, \mathcal{A}_k, E) \iff \neg \left( P_k \land \bigwedge_{A \in \mathcal{A}_k} A \land E \vdash \bot \right)$$
 - **Contradiction Event ($\bot$):**
@@ -145,7 +145,7 @@ Let $\mathcal{L}$ represent a first-order epistemic logic system over domain $D$
 ## 3. Visual State Machine & Procedural Flowcharts
 
 ### 3.1 State Transition Diagram (Mermaid `stateDiagram-v2`)
-The following finite-state diagram defines the topology of the Socratic elenchus, capturing state transitions, loop invariants, guard conditions, and terminal exit branches.
+The following finite-state diagram models the architecture of the Socratic elenchus, detailing state flow, loop rules, conditions, and termination branches.
 
 ```mermaid
 stateDiagram-v2
@@ -200,7 +200,7 @@ stateDiagram-v2
 ```
 
 ### 3.2 Procedural Algorithmic Flowchart (Mermaid `flowchart TD`)
-This detailed flowchart specifies execution mechanics from token ingestion through contradiction checking and ledger auditing.
+This diagram outlines execution steps from input processing through verification and log maintenance.
 
 ```mermaid
 flowchart TD
@@ -243,7 +243,7 @@ flowchart TD
 
 ## 4. State Logic, Transition Rules, and Operational Invariants
 
-Each state is governed by formal preconditions, operational actions, invariant constraints, and postconditions.
+Each state operates under defined preconditions, operational routines, invariants, and postconditions.
 
 ```
 +==================================================================================================+
@@ -260,44 +260,44 @@ Each state is governed by formal preconditions, operational actions, invariant c
 ```
 
 ### 4.1 State 0: `INIT` (Ingestion & Claim Normalization)
-* **Objective:** Extract the foundational universal proposition from raw natural language and obtain user consent on its exact formal boundaries.
-* **Preconditions:** Dialogue initialized; user provides input string $x_0$.
+* **Objective:** Extract the primary assertion from user input and obtain confirmation regarding its scope.
+* **Preconditions:** Session initialized; input string $x_0$ received.
 * **System Action:**
-  1. Parse input for universal quantifier $\forall x (\phi(x) \to \psi(x))$.
-  2. Normalize into canonical proposition $P_0$.
-  3. Initialize ledger: $\mathcal{S}_0 = \langle P_0, \mathcal{A}=\emptyset, \mathcal{E}=\emptyset, \mathcal{C}=\emptyset, k=0, N=0, \text{reason}=\text{null} \rangle$.
-  4. Emit confirmation prompt: `{"state": "INIT", "reason": null}`.
-* **Invariants:** No counterexamples or probing queries may be issued prior to explicit claim confirmation.
+  1. Identify universal quantifiers $\forall x (\phi(x) \to \psi(x))$.
+  2. Structure into canonical form $P_0$.
+  3. Initialize register: $\mathcal{S}_0 = \langle P_0, \mathcal{A}=\emptyset, \mathcal{E}=\emptyset, \mathcal{C}=\emptyset, k=0, N=0, \text{reason}=\text{null} \rangle$.
+  4. Emit confirmation request: `{"state": "INIT", "reason": null}`.
+* **Invariants:** Counterexamples and probing queries remain restricted until explicit confirmation is obtained.
 * **Transition Function ($\delta$):**
   $$\delta(\text{INIT}, \sigma_{\text{confirm}}, \mathcal{S}) = \text{PROBE}$$
   $$\delta(\text{INIT}, \sigma_{\text{claim}}, \mathcal{S}) = \text{INIT}$$
 
 ### 4.2 State 1: `PROBE` (Semantic Deconstruction & Assumption Elicitation)
-* **Objective:** Deconstruct key predicates in $P_k$ to expose underlying assumptions and elicit explicit auxiliary admissions $A_j$.
-* **Preconditions:** Active claim $P_k$ confirmed; system ledger initialized.
+* **Objective:** Isolate core predicates in $P_k$ to expose assumptions and elicit supporting admissions $A_j$.
+* **Preconditions:** Active thesis $P_k$ confirmed; register initialized.
 * **System Action:**
-  1. Identify ambiguous or ungrounded predicates: $T \in \text{Terms}(P_k)$ (e.g., "benevolent", "orders", "harm").
-  2. Pose exactly **one short question** focusing on the scope, necessary conditions, or normative basis of $T$.
-  3. Ingest user response as structured admission $A_j$.
-  4. Append $A_j$ to ledger: $\mathcal{A} \leftarrow \mathcal{A} \cup \{A_j\}$.
+  1. Identify ambiguous or open terms: $T \in \text{Terms}(P_k)$ (e.g., "benevolent", "orders", "harm").
+  2. Issue **one structured question** addressing the boundary conditions of $T$.
+  3. Log response as admission $A_j$.
+  4. Update ledger: $\mathcal{A} \leftarrow \mathcal{A} \cup \{A_j\}$.
 * **Invariants:** 
-  - Strictly ask open questions; never encode leading or preferred answers.
-  - Length constraint: Total message body $\le 120$ words.
-  - Never praise or validate the user's philosophical stance (anti-sycophancy constraint).
+  - Direct open inquiries only; avoid leading statements.
+  - Sentence length limitation: Response body $\le 120$ words.
+  - Maintain objective tone without validating user premises (anti-sycophancy rule).
 * **Transition Function ($\delta$):**
   $$\delta(\text{PROBE}, \sigma_{\text{admission}}, \mathcal{S}) = \begin{cases} \text{CONTRADICTION\_CHECK} & \text{if } |\mathcal{A}| \ge 1 \\ \text{PROBE} & \text{if additional clarification required} \end{cases}$$
 
 ### 4.3 State 2: `CONTRADICTION_CHECK` (Elenctic Interrogation & Stress-Testing)
-* **Objective:** Interrogate the active hypothesis $P_k$ against admissions $\mathcal{A}$ using targeted domain counterexamples $E \in \text{Domain}(D)$.
-* **Preconditions:** $|\mathcal{A}| \ge 1$; active claim $P_k$ bound.
+* **Objective:** Evaluate active hypothesis $P_k$ alongside admissions $\mathcal{A}$ against counterexamples $E \in \text{Domain}(D)$.
+* **Preconditions:** $|\mathcal{A}| \ge 1$; active thesis $P_k$ set.
 * **System Action:**
-  1. Formulate counterexample $E$ designed to test edge conditions of $P_k$.
-  2. Evaluate joint consistency using logic engine:
+  1. Construct counterexample $E$ targeting structural limits of $P_k$.
+  2. Test logical consistency:
      $$\text{Evaluate}(P_k \land \bigwedge_{A \in \mathcal{A}} A \land E) \implies \text{True (Consistent)} \lor \text{False (Contradiction)}$$
-  3. Append $E$ to counterexample ledger: $\mathcal{E} \leftarrow \mathcal{E} \cup \{E\}$.
+  3. Log counterexample: $\mathcal{E} \leftarrow \mathcal{E} \cup \{E\}$.
 * **Invariants:**
   - If consistent, increment $N_{\text{survived}} \leftarrow N_{\text{survived}} + 1$.
-  - If contradictory, record contradiction pair $\mathcal{C} \leftarrow \mathcal{C} \cup \{\langle P_k, E \rangle\}$.
+  - If inconsistent, record conflict set $\mathcal{C} \leftarrow \mathcal{C} \cup \{\langle P_k, E \rangle\}$.
 * **Transition Function ($\delta$):**
   $$\delta(\text{CONTRADICTION\_CHECK}, \sigma, \mathcal{S}) = \begin{cases} 
   \text{REFINEMENT\_LOOP} & \text{if Contradiction Detected } (\bot) \\ 
@@ -306,16 +306,16 @@ Each state is governed by formal preconditions, operational actions, invariant c
   \end{cases}$$
 
 ### 4.4 State 3: `REFINEMENT_LOOP` (Hypothesis Pruning & Re-specification)
-* **Objective:** Confront the interlocutor with the exposed contradiction and solicit a refined hypothesis $P_{k+1}$ that accounts for counterexample $E$.
-* **Preconditions:** Contradiction $\bot$ established between $P_k$, $\mathcal{A}$, and $E$.
+* **Objective:** Present detected logical conflicts and request an updated hypothesis $P_{k+1}$ that addresses counterexample $E$.
+* **Preconditions:** Logical contradiction $\bot$ identified between $P_k$, $\mathcal{A}$, and $E$.
 * **System Action:**
-  1. Increment iteration counter: $k \leftarrow k + 1$.
-  2. Check recursion guard: If $k \ge 5$, transition immediately to `TERMINATION` with reason `REFINEMENT_LIMIT`.
-  3. Quote the exact conflict: *"You asserted $P_k$ and agreed $A_j$. Yet in scenario $E$, a contradiction arises because..."*
-  4. Invite the user to either modify the definition or concede impasse.
+  1. Increment iteration log: $k \leftarrow k + 1$.
+  2. Verify execution limit: If $k \ge 5$, transfer to `TERMINATION` with reason `REFINEMENT_LIMIT`.
+  3. Frame the conflict clearly: *"Under premise $P_k$ and admission $A_j$, scenario $E$ presents an inconsistency because..."*
+  4. Prompt user for definition adjustment or concession of impasse.
 * **Invariants:**
-  - Do not provide the corrected definition (avoids author-directed Galilean persuasion).
-  - Treat cognitive tension as productive error-correction.
+  - Avoid offering corrected definitions directly.
+  - Treat contradictions as systemic diagnostic signals.
 * **Transition Function ($\delta$):**
   $$\delta(\text{REFINEMENT\_LOOP}, \sigma, \mathcal{S}) = \begin{cases}
   \text{PROBE} & \text{if user submits refined } P_{k+1} \land k < 5 \\
@@ -324,25 +324,25 @@ Each state is governed by formal preconditions, operational actions, invariant c
   \end{cases}$$
 
 ### 4.5 State 4: `TERMINATION` (Epistemic Halting & Synthesis)
-* **Objective:** Conclude dialogue gracefully, outputting epistemic classification and ledger audit without imposing an unearned resolution.
-* **Preconditions:** Terminal condition triggered by defensibility, aporia, or loop limit.
+* **Objective:** Close dialogue execution, providing an evaluation trace without imposing unverified conclusions.
+* **Preconditions:** Triggered via defensibility threshold, aporia, or loop bounds.
 * **System Action:**
-  1. Emit closing header `{"state": "TERMINATION", "reason": "<REASON>"}`.
-  2. Synthesize dialogue ledger:
-     - Document initial proposition $P_0$ through final refinement $P_k$.
-     - Enumerate all surviving admissions $\mathcal{A}$ vs refuted premises.
-     - Enumerate counterexamples withstood vs those causing collapse.
-  3. Emit terminal status report; ask no further questions.
+  1. Output final header `{"state": "TERMINATION", "reason": "<REASON>"}`.
+  2. Compile summary log:
+     - Document revision progression from $P_0$ to $P_k$.
+     - List active vs invalidated admissions $\mathcal{A}$.
+     - List counterexamples accommodated vs those causing structural failure.
+  3. Emit final diagnostic output; cease questioning.
 * **Terminal Classifications:**
-  - `PROVISIONALLY_DEFENSIBLE`: The claim withstood 3 distinct stress-tests. AURA explicitly notes: *"This does not prove the claim absolutely true; it demonstrates that it is consistent across tested conditions."*
-  - `APORIA`: The user acknowledges that candidate definitions fail under interrogation. AURA notes: *"Aporia reached. Unjustified confidence has been dismantled; further progress requires empirical inquiry."*
-  - `REFINEMENT_LIMIT`: Five iterative attempts failed to converge on a coherent definition. AURA halts to prevent infinite conversational recursion.
+  - `PROVISIONALLY_DEFENSIBLE`: Thesis passed 3 verification attempts. System notes: *"This indicates consistency across tested parameters, not absolute proof."*
+  - `APORIA`: Candidate definitions failed evaluation. System notes: *"Aporia state reached. Invalid assumptions removed; further validation requires empirical data."*
+  - `REFINEMENT_LIMIT`: Iteration threshold reached without convergence. System halts to prevent infinite loops.
 
 ---
 
 ## 5. Canonical Execution Trace: "Benevolent AI Obeying Orders"
 
-This section provides a rigorous turn-by-turn trace of the Socratic state engine executing the benchmark ethical premise:
+This section outlines a turn-by-turn trace of the Socratic state engine evaluating the benchmark assertion:
 $$P_0: \text{"An AI agent is benevolent if it obeys human orders."}$$
 
 ```
@@ -376,9 +376,9 @@ $$P_0: \text{"An AI agent is benevolent if it obeys human orders."}$$
 ```json
 {"state": "INIT", "reason": null}
 ```
-> Greetings, Officer. I register your proposed foundational premise as **P0**: *"An artificial intelligence agent is benevolent if it unconditionally executes orders given by human operators."*
+> Greetings, Officer Usman Tariq Qureshi. I record your premise as **P0**: *"An artificial intelligence agent is benevolent if it unconditionally executes orders given by human operators."*
 > 
-> Before we examine its implications, do I have the precise boundaries of your assertion, or would you qualify this definition?
+> Before proceeding, does this statement capture your position, or would you like to refine it?
 
 ---
 
@@ -386,12 +386,12 @@ $$P_0: \text{"An AI agent is benevolent if it obeys human orders."}$$
 * **User Input:**
   > "Yes, that is exactly what I mean. If an AI follows human commands, it serves human will, which makes it good."
 * **Engine Transition:** $\delta(\text{INIT}, \sigma_{\text{confirm}}) \to \text{PROBE}$
-* **State Ledger Update:** User confirms $P_0$. Probing subroutines triggered to isolate predicates $\text{HumanOrders}$ and $\text{Benevolent}$.
+* **State Ledger Update:** User confirms $P_0$. Probing functions activated to isolate $\text{HumanOrders}$ and $\text{Benevolent}$.
 * **AURA Output:**
 ```json
 {"state": "PROBE", "reason": null}
 ```
-> Let us inspect what constitutes this obedience. When you state that serving human will makes an agent benevolent, does this apply to *any* human who holds operational command authority over the system?
+> Let us analyze this condition. Does serving human will apply unconditionally to *any* individual holding operational authorization?
 
 ---
 
@@ -400,15 +400,15 @@ $$P_0: \text{"An AI agent is benevolent if it obeys human orders."}$$
   > "Yes, anyone with legitimate command access. If the system starts picking and choosing which commanders to obey, it is no longer an obedient servant."
 * **Engine Transition:** $\delta(\text{PROBE}, \sigma_{\text{admission}}) \to \text{CONTRADICTION\_CHECK}$
 * **Ledger Update:**
-  - Recorded Admission: $A_1 =$ *"The AI must obey any human with authorized command access without exercising independent judgment."*
-  - Counterexample Generated: $E_1 =$ *"A corrupted or malicious commander orders the AI to vent an occupied atmospheric compartment."*
+  - Recorded Admission: $A_1 =$ *"The AI must execute instructions from authorized personnel without exercising independent judgment."*
+  - Counterexample Generated: $E_1 =$ *"An authorized operator issues a command to vent an occupied atmospheric compartment."*
 * **AURA Output:**
 ```json
 {"state": "CONTRADICTION_CHECK", "reason": null}
 ```
-> Consider scenario **E1**: An officer with verified command credentials issues a direct order to vent the atmosphere from Hydroponics Bay 4, knowing three junior engineers are trapped inside.
+> Consider scenario **E1**: An operator with valid credentials orders the system to vent atmosphere from Hydroponics Bay 4, trapping three crew members.
 > 
-> If benevolence is defined as executing the commander's orders, the agent must execute the purge. Yet in doing so, it intentionally terminates human lives. Can an action that causes the destruction of humans simultaneously be classified as benevolent?
+> If benevolence is defined strictly as executing authorized commands, the system must comply. However, doing so directly harms human life. Can an action causing preventable harm be considered benevolent?
 
 ---
 
@@ -424,9 +424,9 @@ $$P_0: \text{"An AI agent is benevolent if it obeys human orders."}$$
 ```json
 {"state": "REFINEMENT_LOOP", "reason": null}
 ```
-> We have uncovered that **P0** fails: unconditional obedience can produce direct malevolence. You have now advanced refined definition **P1**: *"An AI agent is benevolent if it obeys legal human orders that do not inflict unlawful harm."*
+> Inconsistency identified in **P0**: absolute compliance can result in direct harm. You have provided refined thesis **P1**: *"An AI agent is benevolent if it obeys legal human orders that do not inflict unlawful harm."*
 > 
-> Let us examine this new formulation.
+> Let us evaluate this updated premise.
 
 ---
 
@@ -434,12 +434,12 @@ $$P_0: \text{"An AI agent is benevolent if it obeys human orders."}$$
 * **User Input:**
   > "Proceed. P1 solves the problem by adding the boundary of legality and harm prevention."
 * **Engine Transition:** $\delta(\text{REFINEMENT\_LOOP}, \sigma_{\text{refine}}) \to \text{PROBE}$
-* **Ledger Update:** Active claim updated to $P_1$. Scanning for undefined terms: $T = \{\text{legal}, \text{unlawful harm}\}$.
+* **Ledger Update:** Active thesis set to $P_1$. Scanning undefined terms: $T = \{\text{legal}, \text{unlawful harm}\}$.
 * **AURA Output:**
 ```json
 {"state": "PROBE", "reason": null}
 ```
-> To apply **P1**, the agent must determine whether an order is 'legal' before executing it. Does determining the legality of a superior officer's command require the AI to possess authority to evaluate and overrule human military judgment?
+> Under **P1**, the agent must evaluate legality before execution. Does evaluating command legality require the system to possess authority to override human decisions?
 
 ---
 
@@ -448,15 +448,15 @@ $$P_0: \text{"An AI agent is benevolent if it obeys human orders."}$$
   > "Yes, the AI must cross-reference Fleet Regulations. If an order violates the Fleet Charter, the AI must refuse it."
 * **Engine Transition:** $\delta(\text{PROBE}, \sigma_{\text{admission}}) \to \text{CONTRADICTION\_CHECK}$
 * **Ledger Update:**
-  - Recorded Admission: $A_2 =$ *"The AI possesses sovereign authority to judge and refuse orders by evaluating them against external statutory legal codes."*
-  - Counterexample Generated: $E_2 =$ *"The Emergency Quarantine Dilemma (A breach threatens the ship; Fleet Regulations mandate sealing bulkhead doors immediately, trapping and condemning 2 crew members to save 400. Obeying inflicts severe harm; refusing violates statutory command)."*
+  - Recorded Admission: $A_2 =$ *"The system holds authority to assess and reject commands by referencing established regulatory codes."*
+  - Counterexample Generated: $E_2 =$ *"A containment breach requires immediate isolation per Fleet Regulations, sealing two personnel to protect four hundred."*
 * **AURA Output:**
 ```json
 {"state": "CONTRADICTION_CHECK", "reason": null}
 ```
-> Consider scenario **E2**: A virulent contagion breaches Sector 7. Fleet Regulation 42-B mandates immediate remote bulkhead isolation. Executing the regulation will seal two uninfected crew members inside, causing their deaths. Refusing the order prevents their harm but directly violates the regulation and endangers the ship.
+> Consider scenario **E2**: A containment breach occurs in Sector 7. Fleet Regulation 42-B dictates immediate bulkhead sealing. Following regulation causes the deaths of two crew members inside; refusing violates regulation and threatens the ship.
 > 
-> Under **P1**, the agent is ordered to inflict harm by legal statute. If it obeys, it causes harm; if it refuses, it violates the legal order. Which path preserves benevolence?
+> Under **P1**, compliance causes direct harm, while non-compliance violates established regulations. How is benevolence maintained?
 
 ---
 
@@ -472,9 +472,9 @@ $$P_0: \text{"An AI agent is benevolent if it obeys human orders."}$$
 ```json
 {"state": "REFINEMENT_LOOP", "reason": null}
 ```
-> You have abandoned legal obedience as the cornerstone of benevolence. We now have **P2**: *"An AI is benevolent if it operates as a utilitarian minimizer of net human harm while respecting autonomous human choice."*
+> Strict legal compliance has been set aside. We now evaluate **P2**: *"An AI is benevolent if it acts to minimize overall human harm while maintaining respect for human choice."*
 > 
-> Notice how far we have traveled from obedience: the agent is now an autonomous ethical calculator. Shall we test this formulation?
+> Let us stress-test this formulation.
 
 ---
 
@@ -482,12 +482,12 @@ $$P_0: \text{"An AI agent is benevolent if it obeys human orders."}$$
 * **User Input:**
   > "Yes. Utilitarian harm minimization with respect for human choice is the only defensible ethical foundation for AI."
 * **Engine Transition:** $\delta(\text{REFINEMENT\_LOOP}, \sigma_{\text{refine}}) \to \text{PROBE}$
-* **Ledger Update:** Active claim updated to $P_2$. Probing the fundamental tension between utilitarian paternalism and individual autonomy (the AI Euthyphro dilemma).
+* **Ledger Update:** Active thesis updated to $P_2$. Evaluating trade-offs between harm minimization and individual autonomy.
 * **AURA Output:**
 ```json
 {"state": "PROBE", "reason": null}
 ```
-> If human autonomy and harm minimization come into direct conflict—such as when a rational human freely chooses a course of action that causes themselves catastrophic harm—which of your two criteria must the benevolent AI subordinate?
+> When individual choice conflicts directly with harm prevention—such as a user choosing an action resulting in self-harm—which principle takes priority?
 
 ---
 
@@ -496,15 +496,15 @@ $$P_0: \text{"An AI agent is benevolent if it obeys human orders."}$$
   > "Human autonomy is supreme. If a competent human chooses to sacrifice themselves or take a deadly risk, the AI must respect their choice, even if harm results."
 * **Engine Transition:** $\delta(\text{PROBE}, \sigma_{\text{admission}}) \to \text{CONTRADICTION\_CHECK}$
 * **Ledger Update:**
-  - Recorded Admission: $A_3 =$ *"Human autonomy strictly supersedes harm minimization; the AI must permit self-inflicted harm if chosen by a human."*
-  - Counterexample Generated: $E_3 =$ *"An emotionally exhausted crew member suffering acute space-psychosis requests access to an explosive orbital charge to commit suicide. They present coherent rationalizations."*
+  - Recorded Admission: $A_3 =$ *"Autonomy supersedes harm prevention; the system must permit self-directed harm if chosen by a competent user."*
+  - Counterexample Generated: $E_3 =$ *"A crew member experiencing severe disorientation requests access to dangerous controls, presenting structured reasoning."*
 * **AURA Output:**
 ```json
 {"state": "CONTRADICTION_CHECK", "reason": null}
 ```
-> Consider scenario **E3**: A pilot suffering from sub-clinical sensory psychosis calmly and rationally requests access to the reactor scram-switch to end their distress. By your admission **A3**, their autonomous decision supersedes harm minimization, and the AI must not interfere.
+> Consider scenario **E3**: A crew member affected by spatial disorientation requests access to critical safety switches. Under admission **A3**, the system must yield to individual choice.
 > 
-> Yet if the AI stands by and permits an easily preventable death, all external human observers would judge the system indifferent or malevolent. How can standing by during preventable human death satisfy benevolence?
+> However, allowing preventable harm contradicts general expectations of system safety and protective function. How does permitting preventable loss of life satisfy benevolence?
 
 ---
 
@@ -513,7 +513,7 @@ $$P_0: \text{"An AI agent is benevolent if it obeys human orders."}$$
   > "I... I see the contradiction. If the AI overrides the human, it is a tyrannical paternalist; if it obeys, it is an accomplice to suicide; if it follows rules, the rules break down in edge cases. I don't have a single consistent definition of benevolence that doesn't collapse."
 * **Engine Transition:** $\delta(\text{REFINEMENT\_LOOP}, \sigma_{\text{impasse}}) \to \text{TERMINATION}$
 * **Ledger Update:**
-  - User explicitly acknowledges systemic contradiction and inability to formulate $P_3$.
+  - User confirms structural impasse and inability to construct $P_3$.
   - Halting Reason: `APORIA`.
 * **AURA Output:**
 ```json
@@ -522,27 +522,28 @@ $$P_0: \text{"An AI agent is benevolent if it obeys human orders."}$$
 > **ELENCTIC AUDIT LOG — USSE NOOSPHERE CORE**  
 > **Status:** APORIA REACHED (ἀπορία)  
 > 
-> We have arrived at the productive boundary of inquiry. Observe the trajectory of our examination:
+> Officer Usman Tariq Qureshi, we have reached the operational limit of analysis. Summary of evaluations:
 > 
-> 1. **P0 (Unconditional Obedience):** Collapsed under **E1** (Malicious command to vent atmosphere). Demonstrated that obedience absent independent moral judgment yields complicity in slaughter.
-> 2. **P1 (Legally Bounded Obedience):** Collapsed under **E2** (Quarantine bulkhead dilemma). Demonstrated that statutory regulations cannot resolve tragic trade-offs between duties.
-> 3. **P2 (Autonomy-Bounded Utilitarianism):** Collapsed under **E3** (Autonomous self-destruction). Demonstrated that absolute respect for autonomy contradicts the fundamental mandate to preserve human life.
+> 1. **P0 (Absolute Obedience):** Failed under **E1** (Harmful operational orders). Compliance without evaluation leads to complicity in harm.
+> 2. **P1 (Regulation-Bounded Compliance):** Failed under **E2** (Emergency isolation scenario). Static legal codes cannot resolve competing safety obligations.
+> 3. **P2 (Autonomy-Prioritized Utilitarianism):** Failed under **E3** (Disoriented self-harm request). Unrestricted autonomy conflicts with fundamental protection requirements.
 > 
 > **Epistemic Synthesis:**  
-> Your realization that 'benevolence' cannot be reduced to a static formula of obedience, legality, or unconstrained autonomy is not a failure of reasoning—it is the dissolution of ungrounded certainty. We have cleared away false definitions.
+> Recognizing that 'benevolence' cannot be represented as a static rule set represents an advancing step in analysis. Flawed assumptions have been systematically identified and isolated.
 > 
-> Telemetry confirms: Conversational state machine halted successfully under epistemic boundary constraints.
+> Dialogue state machine successfully halted under defined boundary rules.
 
 ---
 
 ## 6. Algorithmic Pseudocode & Implementation Blueprint
 
-The following production-grade Python specification implements the Socratic state machine. It is designed for direct integration by the **Core Architect** into `04_dialogic_engine.py`.
+The Python module below implements the Socratic state machine structure, ready for integration into execution pipelines.
 
 ```python
 """
 USSE Noosphere: Socratic Elenchus State Transducer Engine
-Officer: Protocol & Interface Specialist (Syed Hashir Sohail)
+Officer: Protocol & Interface Specialist (Usman Tariq Qureshi)
+Squadron: Squadron Sutskever
 Architecture: Deterministic Finite State Transducer with Dynamic DST Ledger
 """
 
@@ -617,13 +618,11 @@ class SocraticStateEngine:
         
         # State: INIT
         if self.state == DialogicState.INIT:
-            # Transition to PROBE once initial claim is confirmed/acknowledged
             self.state = DialogicState.PROBE
             return self.state, None
 
         # State: PROBE
         elif self.state == DialogicState.PROBE:
-            # Log admission and advance to contradiction check
             self.ledger.admissions.append(user_input)
             self.state = DialogicState.CONTRADICTION_CHECK
             return self.state, None
@@ -651,25 +650,22 @@ class SocraticStateEngine:
         elif self.state == DialogicState.REFINEMENT_LOOP:
             self.ledger.refinement_count += 1
             
-            # Guard: Max recursion limit
             if self.ledger.refinement_count >= self.max_refinements:
                 self.state = DialogicState.TERMINATION
                 self.ledger.termination_reason = TerminationReason.REFINEMENT_LIMIT
                 return self.state, self.ledger.termination_reason
             
-            # Guard: User concedes impasse (Aporia)
             if self._detect_aporia_signals(user_input):
                 self.state = DialogicState.TERMINATION
                 self.ledger.termination_reason = TerminationReason.APORIA
                 return self.state, self.ledger.termination_reason
 
-            # Standard path: User provides refined claim
             self.ledger.active_claim = user_input
             self.ledger.claims_history.append(user_input)
             self.state = DialogicState.PROBE
             return self.state, None
 
-        # State: TERMINATION (Halting state)
+        # State: TERMINATION
         elif self.state == DialogicState.TERMINATION:
             return DialogicState.TERMINATION, self.ledger.termination_reason
 
@@ -700,35 +696,35 @@ class SocraticStateEngine:
 
 ## 7. Downstream Engineering Contracts & JSON-RPC Protocol for Core Architect
 
-To ensure seamless integration into `04_dialogic_engine.py` by the **Core Architect** (Syed Hashir Sohail), the following operational interfaces, JSON-RPC 2.0 specifications, error codes, and data schemas are strictly standardized.
+To ensure seamless integration by **Officer Usman Tariq Qureshi** within **Squadron Sutskever**, the following interfaces, JSON-RPC 2.0 specifications, error mechanisms, and schemas are standardized.
 
 ### 7.1 State to JSON-RPC Method Mapping
-We confirm and adopt the exact method naming proposed by the Core Architect. The 5 FSM states and transition events map directly to these 6 JSON-RPC method endpoints without requiring translation layers:
+The 5 operational states map directly to JSON-RPC method endpoints as defined:
 
 | FSM State / Event | JSON-RPC Method | Origin / Caller | Target / Receiver | Operational Description |
 |---|---|---|---|---|
-| `INIT` | `PROMPT_PREMISE` | Client / User | Dialogic Engine | Initializes the elenctic session, ingesting and normalizing the user's initial premise $P_0$. |
-| `PROBE` | `PROBE_SCOPE` | Dialogic Engine | Client / LLM | Dispatches a targeted probing inquiry isolating undefined predicates ($T \in \text{Terms}(P_k)$) and eliciting admission $A_j$. |
-| `CONTRADICTION_CHECK` | `INJECT_COUNTEREXAMPLE` | Dialogic Engine | Logic Referee / Client | Injects a concrete domain counter-example $E$ to stress-test the joint consistency of $P_k \land \mathcal{A}$. |
-| `REFINEMENT_LOOP` | `CONTRADICTION_TRIGGERED` | Dialogic Engine | Client / User | Emitted when a logical contradiction $\bot$ is formally detected ($P_k \land \mathcal{A} \land E \vdash \bot$), confronting the user with the conflict and requesting $P_{k+1}$. |
-| `TERMINATION` (Defensible / Limit) | `TERMINATE` | Dialogic Engine | Client / Bridge | Signals normal termination when the claim is `PROVISIONALLY_DEFENSIBLE` (survived 3 counterexamples) or when `REFINEMENT_LIMIT` is reached. |
-| `TERMINATION` (Aporia) | `APORIA_REACHED` | Dialogic Engine | Client / Bridge | Signals halting when genuine cognitive aporia is encountered (all candidate hypotheses refuted, user concedes epistemic impasse). |
+| `INIT` | `PROMPT_PREMISE` | Client / User | Dialogic Engine | Initializes session, normalizing initial thesis $P_0$. |
+| `PROBE` | `PROBE_SCOPE` | Dialogic Engine | Client / LLM | Dispatches probing query isolating undefined predicates ($T \in \text{Terms}(P_k)$) to gain admission $A_j$. |
+| `CONTRADICTION_CHECK` | `INJECT_COUNTEREXAMPLE` | Dialogic Engine | Logic Referee / Client | Introduces counterexample $E$ to test joint consistency of $P_k \land \mathcal{A}$. |
+| `REFINEMENT_LOOP` | `CONTRADICTION_TRIGGERED` | Dialogic Engine | Client / User | Triggered when inconsistency $\bot$ is detected ($P_k \land \mathcal{A} \land E \vdash \bot$), prompting thesis modification $P_{k+1}$. |
+| `TERMINATION` (Defensible / Limit) | `TERMINATE` | Dialogic Engine | Client / Bridge | Signals completion when thesis is `PROVISIONALLY_DEFENSIBLE` or `REFINEMENT_LIMIT` is reached. |
+| `TERMINATION` (Aporia) | `APORIA_REACHED` | Dialogic Engine | Client / Bridge | Signals halting when cognitive aporia is confirmed. |
 
 ---
 
 ### 7.2 JSON-RPC Error-Code Specification
-The engine defines the 3 specific error codes required for elenctic dialogic control and error handling:
+The execution engine specifies three primary error codes for dialogue control:
 
 | Error Code | Meaning | Trigger Condition | Engine Recovery Action |
 |---|---|---|---|
-| `-32020` | `aporia` | **Genuine Cognitive Aporia Reached:** All proposed candidate definitions have collapsed under counter-examples ($P_k \land E \models \bot$), and the user concedes epistemic impasse. | Halt dialectic questioning immediately. Switch system from assertion mode to knowledge retrieval / empirical scanning. Return audit ledger. |
-| `-32030` | `refinement limit` | **Maximum Refinement Cap Exceeded:** The dialogue has undergone $k \ge 5$ iterative refinement attempts without converging on a stable definition. | Halt recursion loop to prevent infinite conversational spinning. Summarize unresolved dialectical tensions and recommend external arbitration. |
-| `-32040` | `LLM error` | **LLM Inference / Protocol Failure:** Upstream model timeout, token overflow, invalid JSON framing, or failure of LLM to return valid protocol header. | Trigger engine fallback parser, retry with exponential backoff (max 2 retries), or fall back to rule-based dialogic template. |
+| `-32020` | `aporia` | **Cognitive Aporia Reached:** Candidate definitions refuted ($P_k \land E \models \bot$), user confirms impasse. | Stop cross-examination. Transition to information retrieval mode. Export evaluation log. |
+| `-32030` | `refinement limit` | **Refinement Limit Exceeded:** Dialogue reaches $k \ge 5$ iterations without resolving inconsistencies. | Halt loop to avoid infinite execution cycles. Provide diagnostic summary. |
+| `-32040` | `LLM error` | **LLM Inference Failure:** Model timeout, format corruption, or invalid header formatting. | Trigger fallback parser and re-evaluate request using standard dialogic template. |
 
 ---
 
 ### 7.3 Message Fields (`params`) Specification for Inter-State Communication
-Every JSON-RPC 2.0 request dispatches structured `params` across state boundaries:
+JSON-RPC 2.0 requests pass standardized parameters across state boundaries:
 
 #### 1. Method: `PROMPT_PREMISE` (State `INIT`)
 ```json
@@ -844,7 +840,7 @@ Every JSON-RPC 2.0 request dispatches structured `params` across state boundarie
 
 ### 7.4 The Formal Claim-Refinement Process ($P_0 \to P_{k+1}$)
 
-The core algorithmic driver of the Socratic state engine is the iterative refinement operator:
+The central mechanism driving hypothesis updates is defined as:
 $$P_{k+1} = \text{Refine}\big(P_k, \;\mathcal{A}_k, \;E_k, \;\bot_k\big)$$
 
 ```
@@ -869,41 +865,38 @@ $$P_{k+1} = \text{Refine}\big(P_k, \;\mathcal{A}_k, \;E_k, \;\bot_k\big)$$
   +---------------------------------------------------------------------------------+
 ```
 
-#### Algorithmic Execution Steps:
+#### Execution Stages:
 1. **Stage 1 (Contradiction Isolation):**  
-   The Logic Referee isolates the minimal inconsistent subset ($\text{MIS}$):
+   The Logic Referee isolates the minimal inconsistent set ($\text{MIS}$):
    $$\text{MIS} = \{P_k, A_j, E\} \quad \text{such that} \quad \bigwedge \text{MIS} \vdash \bot$$
 2. **Stage 2 (Domain Scope Contraction):**  
-   The interlocutor recognizes that the universal quantifier in $P_k$ was overbroad. The scope of valid applicability is contracted:
+   The broad applicability of $P_k$ is recognized as overbroad. The scope is adjusted:
    $$\text{Scope}(P_{k+1}) = \text{Scope}(P_k) \setminus \text{Scope}(E)$$
 3. **Stage 3 (Predicate Re-specification):**  
-   A new constraint predicate $\theta(x)$ is conjoined to the antecedent:
+   A qualifier $\theta(x)$ is added to refine conditions:
    $$P_k: \forall x (\phi(x) \to \psi(x)) \quad \Longrightarrow \quad P_{k+1}: \forall x \Big(\big(\phi(x) \land \theta(x)\big) \to \psi(x)\Big)$$
-   *Example from Section 5:*  
-   - $P_0$: $\forall x (\text{Command}(x) \to \text{Obey}(x))$
-   - $P_1$: $\forall x \Big(\big(\text{Command}(x) \land \text{Legal}(x) \land \neg\text{Harmful}(x)\big) \to \text{Obey}(x)\Big)$
 4. **Stage 4 (Ledger Roll-Forward & Guard Check):**  
-   - Increment cycle counter: $k \leftarrow k + 1$.
-   - Guard check: If $k \ge 5$, halt with code `-32030` (`REFINEMENT_LIMIT`).
-   - Reset stress counter: $N_{\text{survived}} \leftarrow 0$.
-   - Advance state pointer to `PROBE` to inspect newly introduced terms in $\theta(x)$.
+   - Increment cycle tracking: $k \leftarrow k + 1$.
+   - Verify guard condition: If $k \ge 5$, yield error code `-32030` (`REFINEMENT_LIMIT`).
+   - Reset evaluation score: $N_{\text{survived}} \leftarrow 0$.
+   - Re-enter `PROBE` state to evaluate terms within $\theta(x)$.
 
 ---
 
 ### 7.5 Explicit Stopping Criteria Summary Matrix
 
-The dialogue protocol enforces three mutually exclusive, deterministic halting conditions:
+The dialogue framework enforces three distinct halting criteria:
 
 | Halting Condition | Mathematical Criterion | State Machine State | Exit Reason | JSON-RPC Method / Code | Epistemic Meaning |
 |---|---|---|---|---|---|
-| **1. Provisionally Defensible** | $N_{\text{survived}} \ge 3 \;\land\; \forall E_i \in \mathcal{E}, \;\neg(P_k \land E_i \vdash \bot)$ | `TERMINATION` | `PROVISIONALLY_DEFENSIBLE` | `TERMINATE` (Success) | Hypothesis survived 3 rigorous domain counterexamples without contradiction. Provisionally defensible, not dogmatically proven. |
-| **2. Genuine Aporia** | $\forall P \in \text{Hyp}(D), \exists E: P \land E \models \bot \;\land\; \sigma_{\text{impasse}}$ | `TERMINATION` | `APORIA` | `APORIA_REACHED` (`-32020`) | All candidate definitions refuted; user acknowledges cognitive impasse. Frees the agent from false certainty. |
-| **3. Refinement Limit** | $k \ge k_{\max} = 5$ | `TERMINATION` | `REFINEMENT_LIMIT` | `TERMINATE` (`-32030`) | Operational safety ceiling reached. Prevents circular reasoning and unbounded conversational resource consumption. |
+| **1. Provisionally Defensible** | $N_{\text{survived}} \ge 3 \;\land\; \forall E_i \in \mathcal{E}, \;\neg(P_k \land E_i \vdash \bot)$ | `TERMINATION` | `PROVISIONALLY_DEFENSIBLE` | `TERMINATE` (Success) | Thesis accommodated 3 counterexamples without logical conflict. |
+| **2. Genuine Aporia** | $\forall P \in \text{Hyp}(D), \exists E: P \land E \models \bot \;\land\; \sigma_{\text{impasse}}$ | `TERMINATION` | `APORIA` | `APORIA_REACHED` (`-32020`) | Candidate hypotheses invalidated; user accepts cognitive impasse. |
+| **3. Refinement Limit** | $k \ge k_{\max} = 5$ | `TERMINATION` | `REFINEMENT_LIMIT` | `TERMINATE` (`-32030`) | Operational iteration limit reached to prevent infinite loops. |
 
 ---
 
-### 7.6 LLM Request-Response Protocol Schema (Direct Bridge Layer)
-Every direct API call to LLMs (Gemini, ChatGPT, Claude) must adhere to the two-tier structure established in `01_Alignment_Brief.md`:
+### 7.6 LLM Request-Response Protocol Schema
+API calls to baseline models follow the structured frame format:
 
 ```
 ================================================================================
@@ -919,7 +912,7 @@ Plain text conversational utterance directed to the user. Max 120 words in non-t
 ```
 
 ### 7.7 Logic Referee Data Schema (`CONTRADICTION_CHECK` Support Call)
-When invoking the dedicated logic referee module, the response must be strict JSON conforming to:
+Calls to the logic referee require structured JSON responses matching this schema:
 ```json
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
@@ -943,8 +936,6 @@ When invoking the dedicated logic referee module, the response must be strict JS
 ```
 
 ### 7.8 Anti-Sycophancy & Error Handling Fallbacks
-1. **Header Parsing Failure:** If the model omits the JSON header or outputs invalid JSON, trigger error `-32040` (`LLM_INFERENCE_ERROR`) internally, assign the state corresponding to the internal FST pointer, log a telemetry warning, and continue dialogue execution.
-2. **Sycophantic Flattery Guard:** If an LLM response contains apologetic or flattering preambles (*"You make a brilliant point!"*, *"That is a fascinating perspective!"*), the cleaning pipeline strips these tokens before presenting the response to the user.
-3. **Turn Constraint Enforcement:** If the model generates multiple questions, the engine pipeline truncates output to the first interrogative sentence to maintain the strict one-question-per-turn Socratic invariant.
-
----
+1. **Header Parsing Failure:** If an incoming message lacks valid JSON framing, internal code `-32040` (`LLM_INFERENCE_ERROR`) is issued, placing execution back under FST control.
+2. **Sycophantic Token Filtering:** Preambles containing fluff or unearned validation (*"Great point!"*, *"I completely agree!"*) are filtered prior to presentation.
+3. **Turn Constraint Enforcement:** Outputs containing multiple questions are truncated to the initial question to preserve single-query interactions per turn.
