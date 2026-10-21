@@ -1,7 +1,7 @@
 # Mission 01: The Architecture of Argument & Dialogic Protocols
 
 **Current team:** Squad Sutskever<br>
-**Members:** Sufyan Khalid, Usman Tariq Qureshi, Syed Hashir Sohail<br>
+**Members:** Hashir Sohail, Sufyan Khalid, Usman Tariq, Yasan Malik<br>
 **Attribution:** Inherited work retains original author credits. See [project review](../PROJECT_REVIEW.md).
 
 **Starship Operational Unit:** USSE Noosphere Bridge Crew  

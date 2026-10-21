@@ -8,11 +8,14 @@ This repository is Squad Sutskever's working copy of solutions for **Conversatio
 
 ---
 
-## Team Members
+## Contributors
 
+Squad Sutskever has four contributors:
+
+- Hashir Sohail
 - Sufyan Khalid
-- Usman Tariq Qureshi
-- Syed Hashir Sohail
+- Usman Tariq
+- Yasan Malik
 
 Squad Sutskever role assignments and reviews are pending. Names identify current
 maintenance responsibility. Existing code, experiments, and transcripts include
@@ -23,10 +26,10 @@ that current members performed historical runs.
 
 | Member | Role | Deliverable |
 |---|---|---|
-| Syed Hashir Sohail | Historical Archivist | `01_Alignment_Brief.md` |
-| Syed Hashir Sohail | Protocol Specialist | `02_Socratic_Protocol_Map.md` |
-| Syed Hashir Sohail | Ethical Navigator | `03_Galilean_Sandbox.md` |
-| Syed Hashir Sohail | Core Architect | `04_dialogic_engine.py` / `ps01_solution.ipynb` |
+| All four contributors | Historical Archivist | `01_Alignment_Brief.md` |
+| All four contributors | Protocol Specialist | `02_Socratic_Protocol_Map.md` |
+| All four contributors | Ethical Navigator | `03_Galilean_Sandbox.md` |
+| All four contributors | Core Architect | `04_dialogic_engine.py` / `ps01_solution.ipynb` |
 
 ---
 
@@ -34,7 +37,7 @@ that current members performed historical runs.
 
 ### Part 1: Historical Archivist — *The Dialogic Alignment Brief*
 
-**Current maintainer:** Syed Hashir Sohail
+**Current maintainers:** Hashir Sohail, Sufyan Khalid, Usman Tariq, Yasan Malik
 
 **Deliverable:** `01_Alignment_Brief.md`
 
@@ -48,7 +51,7 @@ that current members performed historical runs.
 
 ### Part 2: Protocol Specialist — *The Socratic State-Machine*
 
-**Current maintainer:** Syed Hashir Sohail
+**Current maintainers:** Hashir Sohail, Sufyan Khalid, Usman Tariq, Yasan Malik
 
 **Deliverable:** `02_Socratic_Protocol_Map.md`
 
@@ -64,7 +67,7 @@ that current members performed historical runs.
 
 ### Part 3: Ethical Navigator — *The Galilean Ethics Sandbox*
 
-**Current maintainer:** Syed Hashir Sohail
+**Current maintainers:** Hashir Sohail, Sufyan Khalid, Usman Tariq, Yasan Malik
 
 **Deliverable:** `03_Galilean_Sandbox.md`
 
@@ -82,7 +85,7 @@ that current members performed historical runs.
 
 ### Part 4: Core Architect — *Engine Implementation*
 
-**Current maintainer:** Syed Hashir Sohail
+**Current maintainers:** Hashir Sohail, Sufyan Khalid, Usman Tariq, Yasan Malik
 
 **Deliverables:**
 
@@ -266,9 +269,10 @@ The squadron must complete all deliverables and obtain all four station sign-off
 Each member should check their own box after reviewing the inherited work and
 new contributions. These reviews do not replace the four course station approvals.
 
+- [ ] Hashir Sohail
 - [ ] Sufyan Khalid
-- [ ] Usman Tariq Qureshi
-- [ ] Syed Hashir Sohail
+- [ ] Usman Tariq
+- [ ] Yasan Malik
 
 ## Project Review
 

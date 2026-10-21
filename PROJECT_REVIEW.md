@@ -1,7 +1,7 @@
 # Squad Sutskever project review
 
-Current maintainer: Syed Hashir Sohail.
-Team members: Sufyan Khalid, Usman Tariq Qureshi, Syed Hashir Sohail.
+Current maintainers: Hashir Sohail, Sufyan Khalid, Usman Tariq, Yasan Malik.
+Team members: Hashir Sohail, Sufyan Khalid, Usman Tariq, Yasan Malik.
 Team repository: https://github.com/HashirSohail1999/couse-c-ai
 
 ## Identity labels
