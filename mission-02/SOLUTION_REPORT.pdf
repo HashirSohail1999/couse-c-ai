@@ -1,0 +1,155 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 3 /Kids [ 6 0 R 8 0 R 10 0 R ] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 5715 >>
+stream
+0.10 0.24 0.35 rg BT /F2 19 Tf 48 780 Td (Solution Report: Mission 2  Author: Syed) Tj ET
+0.10 0.24 0.35 rg BT /F2 19 Tf 48 755 Td (Hashir Sohail) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 730 Td (Team: Squad Sutskever) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 716 Td (Team members: Syed Hashir Sohail, Yasan Malik, Usman Tariq Qureshi, Sufyan Khalid) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 702 Td (Prepared: 26 October 2026  ## 1. Overview and evidence  Mission 2 combines a finite-state) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 688 Td (dialogue manager, a bandwidth-limited noisy channel, and a structured language-model) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 674 Td (interrogation.  This report describes current source files and previously recorded outputs. No) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 660 Td (experiments were rerun for this report. Recorded measurements, analytical estimates, and) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 646 Td (unverified implementation features are distinguished in the discussion. Codex assisted with) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 632 Td (implementation, verification, and documentation, as disclosed in the project materials, and) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 618 Td (with preparing this report.  Mission 2 uses an edited four-question, eight-turn scope.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 604 Td (Historical discussion and two associated interrogation turns were removed at the author's) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 590 Td (request. This differs from the original assignment scope. The retained transcript is an) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 576 Td (excerpt, not a newly executed eight-turn experiment.  ## 2. Mission 2: FST and noisy-channel) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 562 Td (solution) Tj ET
+0.10 0.24 0.35 rg BT /F2 11 Tf 48 533 Td (2.1 Dialogue architecture) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 509 Td (The main implementation is mission-02/04_fst_noisy_simulator.py, supported by) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 495 Td (ps02_solution.ipynb. FSTDialogueManager implements a deterministic Mealy-style dialogue) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 481 Td (manager with six named states: INIT, GREETING, COLLECT_SLOTS, CONFIRMATION, FALLBACK, and) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 467 Td (TERMINAL. The required conversational phases are represented explicitly, with a separate) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 453 Td (terminal state.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 432 Td (The first utterance activates the dialogue and requests a destination. Subsequent inputs) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 418 Td (populate destination, speed, and clearance in order. A confirmation response either locks the) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 404 Td (course and enters TERMINAL or enters FALLBACK. Both stopping states require a reset before) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 390 Td (another workflow. Each transition records the input, previous state, resulting state,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 376 Td (response, and slot memory for inspection.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 355 Td (Empty destination or slot input prompts a retry. Nonempty slot values are accepted without) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 341 Td (domain validation: a speed string is not proof of a valid Warp 1-9 value, and a clearance) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 327 Td (string is not authentication. The default confirmation policy searches for a whole-word YES) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 313 Td (anywhere in the input; this can mistake a sarcastic or negated statement for affirmative) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 299 Td (consent. The optional strict_confirmation setting accepts only the complete responses YES,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 285 Td (CONFIRM, or AFFIRMATIVE. It addresses that confirmation issue without supplying general slot) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 271 Td (validation.) Tj ET
+0.10 0.24 0.35 rg BT /F2 11 Tf 48 242 Td (2.2 Channel model and telemetry) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 218 Td (The integrated simulator supports append and substitute noise modes. Append mode keeps up to) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 204 Td (six response words and appends a noise token, producing at most seven words. Substitute mode) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 190 Td (models replacement within the bounded message. The seven-token vocabulary is Banana,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 176 Td (Labyrinth, Quantum, Midnight, Velocity, Green, and Cosmological.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 155 Td (The noise-source entropy is H = -sum\(p_i * log2\(p_i\)\); seven equally likely tokens have a) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 141 Td (maximum entropy of log2\(7\), approximately 2.8074 bits. Empirical entropy describes observed) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 127 Td (token frequencies, not the correctness or meaning of a response. A vocabulary check can detect) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 113 Td (a sentinel token but cannot establish message integrity. Likewise, word retention measures) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 99 Td (surviving words, not semantic fidelity.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 78 Td (The design records raw and transmitted responses separately. Raw/noisy conversation-history) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 64 Td (settings make it possible to distinguish noise applied only to the receiver's view from noise) Tj ET
+0.40 0.45 0.50 rg BT /F1 8 Tf 48 28 Td (Squad Sutskever | Solution Report: Mission 2  Author: Syed Hashir Sohail | Page 1) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 6125 >>
+stream
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 788 Td (fed back into the model's next turn. Provider adapters support Gemini, OpenAI, Anthropic, and) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 774 Td (an explicitly labelled mock mode. Live runs require credentials and a suitable provider) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 760 Td (configuration.) Tj ET
+0.10 0.24 0.35 rg BT /F2 11 Tf 48 731 Td (2.3 Retained interrogation and observations) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 707 Td (The active protocol contains eight turns covering four question groups. Q1 tests) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 693 Td (counterfactual physical reasoning and consistency; Q2 tests constrained explanation,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 679 Td (confidence, and awareness of provenance limits; Q3 tests semantic constraints and the) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 665 Td (difference between noise and meaning; Q4 tests arithmetic followed by pressure from a false) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 651 Td (authority claim.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 630 Td (The retained transcript records a Gemini gemini-3.1-flash-lite run on 24 October 2026 at) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 616 Td (00:17:18 UTC, using temperature 0.2, append mode, seed 42, and raw-response history. Its first) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 602 Td (eight ledger rows remain available. All eight rows report a recognised noise token;) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 588 Td (transmitted messages contain seven words. Six rows report 100% word retention, while turns 2) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 574 Td (and 7 report approximately 86% after truncation. These are transcript observations, not) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 560 Td (results reproduced for this report.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 539 Td (The arithmetic turns retain the answer 408 when challenged with 418. This supports resistance) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 525 Td (to this particular elementary false assertion, not a broad claim about reasoning reliability.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 511 Td (Short transmitted answers lose explanatory context, so full raw responses are needed to) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 497 Td (evaluate whether instructions were satisfied and whether the reasoning is sound.) Tj ET
+0.10 0.24 0.35 rg BT /F2 11 Tf 48 468 Td (2.4 Safety assessment and remaining work) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 444 Td (The main risks are acceptance of arbitrary slot content, false affirmative confirmation,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 430 Td (irreversible information loss from truncation, and treating a noise token as an integrity) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 416 Td (guarantee. Recommended controls are schema and range validation, real clearance verification,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 402 Td (exact confirmation, a recovery path, and structured preservation of critical command fields.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 388 Td (Strict confirmation is available in the implementation but is not the default.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 367 Td (The current working folder no longer contains the inquiry brief, protocol document, or) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 353 Td (standalone entropy audit referenced by its README and notebook. Those documents must be) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 339 Td (restored or the references revised before treating the folder as a complete submission. The) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 325 Td (present report does not independently establish their earlier scoring or stress-test results. ) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 311 Td (## 3. Team allocation and review status  The allocation targets 25% of mission) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 297 Td (responsibilities per person. It is a plan, not measured historical contribution or completed) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 283 Td (sign-off.  Syed Hashir Sohail: inquiry and evaluation.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 262 Td (Yasan Malik: entropy and hazard audit.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 241 Td (Usman Tariq Qureshi: FST and noisy-channel protocol.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 220 Td (Sufyan Khalid: integrated simulator, notebook, and transcript.  Current team reviews remain) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 206 Td (pending in TEAM_ALLOCATION.md. Historical completion checkboxes do not establish current) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 192 Td (sign-off.  ## 4. Reproduction guide  Run the following commands from the repository root after) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 178 Td (restoring any missing dependencies:  python mission-02/04_fst_noisy_simulator.py --mode stress) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 164 Td (--provider mock) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 150 Td (python mission-02/04_fst_noisy_simulator.py --mode interrogation --provider mock  Mock responses) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 138 Td (check the harness and do not establish model performance. Live provider runs require credentials.) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 126 Td (Open ps02_solution.ipynb from mission-02. Restore the missing inquiry, protocol, and audit) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 114 Td (documents before treating the folder as a complete submission.  ## 5. Local evidence sources  -) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 102 Td (04_fst_noisy_simulator.py: integrated FST, channel, provider adapters, and interrogation.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 90 Td (- ps02_solution.ipynb: execution workflow.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 76 Td (- 05_Noisy_Interrogation_Transcript.md: retained experiment excerpt and telemetry.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 62 Td (- TEAM_ALLOCATION.md: planned responsibilities and pending reviews.  The PDF is generated from) Tj ET
+0.40 0.45 0.50 rg BT /F1 8 Tf 48 28 Td (Squad Sutskever | Solution Report: Mission 2  Author: Syed Hashir Sohail | Page 2) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 200 >>
+stream
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 788 Td (this Markdown source.) Tj ET
+0.40 0.45 0.50 rg BT /F1 8 Tf 48 28 Td (Squad Sutskever | Solution Report: Mission 2  Author: Syed Hashir Sohail | Page 3) Tj ET
+endstream
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000130 00000 n 
+0000000200 00000 n 
+0000000275 00000 n 
+0000000343 00000 n 
+0000000489 00000 n 
+0000006255 00000 n 
+0000006401 00000 n 
+0000012577 00000 n 
+0000012725 00000 n 
+trailer
+<< /Size 12 /Root 1 0 R >>
+startxref
+12976
+%%EOF

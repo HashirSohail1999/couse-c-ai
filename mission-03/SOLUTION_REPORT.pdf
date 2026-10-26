@@ -1,0 +1,182 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 3 /Kids [ 6 0 R 8 0 R 10 0 R ] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 5443 >>
+stream
+0.10 0.24 0.35 rg BT /F2 19 Tf 48 780 Td (Solution Report: Mission 3  Author: Syed) Tj ET
+0.10 0.24 0.35 rg BT /F2 19 Tf 48 755 Td (Hashir Sohail) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 730 Td (Team: Squad Sutskever) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 716 Td (Team members: Syed Hashir Sohail, Yasan Malik, Usman Tariq Qureshi, Sufyan Khalid) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 702 Td (Prepared: 26 October 2026  ## 1. Overview and evidence  Mission 3 investigates multi-head) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 688 Td (attention, rotary positional embeddings, grouped-query attention, KV-cache storage, and memory) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 674 Td (safety.  This report describes current source files and previously recorded outputs. No) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 660 Td (experiments were rerun for this report. Recorded measurements, analytical estimates, and) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 646 Td (unverified implementation features are distinguished in the discussion. Codex assisted with) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 632 Td (implementation, verification, and documentation, as disclosed in the project materials, and) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 618 Td (with preparing this report.  Notebook outputs and the benchmark report document earlier CPU) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 604 Td (runs. The missing attention and GQA source modules must be restored before those components) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 590 Td (can be reproduced from the current mission folder.  ## 2. Mission 3: Transformer components) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 576 Td (and memory) Tj ET
+0.10 0.24 0.35 rg BT /F2 11 Tf 48 547 Td (2.1 Multi-head self-attention) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 523 Td (The retained ps03_solution.ipynb describes projection of an input of shape [B, N, D] into) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 509 Td (queries, keys, and values, splitting across H heads, and computing Attention\(Q,K,V\) =) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 495 Td (softmax\(QK^T / sqrt\(d_k\) + mask\)V. Head outputs are concatenated and projected back to the) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 481 Td (model dimension. Causal masking excludes future keys; padding masks exclude invalid positions.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 460 Td (The notebook records CPU execution with PyTorch 2.14.1+cpu and CUDA unavailable. Its example) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 446 Td (maps [2, 8, 64] to [2, 8, 64], with attention weights [2, 4, 8, 8]. At head dimension 64,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 432 Td (recorded unscaled dot-product variance is 64.1756 and scaled variance is 1.0027, consistent) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 418 Td (with the purpose of the sqrt\(d_k\) denominator.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 397 Td (Recorded checks pass for an independent PyTorch SDPA reference, row sums, causal isolation,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 383 Td (padding and fully masked rows, finite gradients, input validation, and finite FP16/BF16) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 369 Td (outputs. The strictly upper triangular causal weights contain zero nonzero elements. A) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 355 Td (recorded compatibility check matches MHA against GQA when query and KV head counts are equal,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 341 Td (within 1e-6 tolerance.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 320 Td (The source module 01_MultiHead_Attention_Core_starter.py is currently absent. The notebook) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 306 Td (output documents an earlier run; rerunning it requires restoring that module and the GQA) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 292 Td (dependency.) Tj ET
+0.10 0.24 0.35 rg BT /F2 11 Tf 48 263 Td (2.2 Rotary positional embeddings) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 239 Td (The current implementation is mission-03/02_RoPE_Positional_Engine.py. RoPE groups adjacent) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 225 Td (feature coordinates into pairs and applies a position-dependent planar rotation, represented) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 211 Td (using complex multiplication. The rotation preserves pairwise magnitude. With consistent) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 197 Td (frequencies, query-key dot products depend on relative position rather than a shared absolute) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 183 Td (shift.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 162 Td (The script includes relative-invariance verification, shape and norm demonstrations, a) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 148 Td (RoPE-versus-ALiBi attention heatmap, and an NTK-scaling demonstration. These are) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 134 Td (implementation features; no new plots or successful execution are claimed here. They) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 120 Td (illustrate positional behaviour and do not demonstrate trained-model long-context quality.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 106 Td (Integration of rotated keys with the GQA cache remains unverified in the benchmark report:) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 92 Td (each new key must be rotated once at its absolute position before storage.) Tj ET
+0.40 0.45 0.50 rg BT /F1 8 Tf 48 28 Td (Squad Sutskever | Solution Report: Mission 3  Author: Syed Hashir Sohail | Page 1) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 5820 >>
+stream
+0.10 0.24 0.35 rg BT /F2 11 Tf 48 788 Td (2.3 GQA, MQA, and KV-cache design) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 764 Td (Grouped-query attention shares key/value heads across multiple query heads. MHA uses one KV) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 750 Td (head per query head, GQA uses an intermediate count, and MQA uses one KV head. A stateful) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 736 Td (cache retains prior keys and values for token-by-token or chunked causal decoding.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 715 Td (Cache storage in bytes is 2 * B * H_KV * N * d_head * bytes_per_element, where the factor two) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 701 Td (represents keys and values. At equal batch, length, head dimension, and dtype, moving from 32) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 687 Td (KV heads to eight reduces storage by 75%; moving to one reduces it by 96.875%. Storage savings) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 673 Td (alone do not establish better latency or equal language-model quality.) Tj ET
+0.10 0.24 0.35 rg BT /F2 11 Tf 48 644 Td (2.4 Recorded CPU benchmark) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 620 Td (The existing benchmark report describes a 22 October 2026 macOS ARM CPU run with Python) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 606 Td (3.14.3, PyTorch 2.14.1, four CPU threads, batch one, 32 query heads, head dimension 128,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 592 Td (float16, and seed 42. Each configuration uses two warm-ups and five timed repeats. The timed) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 578 Td (operation decodes one new token against a synthetic projected prefix; prefix construction is) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 564 Td (excluded.) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 543 Td (Configuration       Context    Cache MiB    Median CPU ms) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 531 Td (MHA \(32:32\)           1,024       16.00          1.786) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 519 Td (GQA \(32:8\)            1,024        4.00          1.995) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 507 Td (MQA \(32:1\)            1,024        0.50          1.343) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 495 Td (MHA \(32:32\)           4,096       64.00          2.833) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 483 Td (GQA \(32:8\)            4,096       16.00          5.731) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 471 Td (MQA \(32:1\)            4,096        2.00          2.566) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 459 Td (MHA \(32:32\)          16,384      256.00          7.242) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 447 Td (GQA \(32:8\)           16,384       64.00         21.698) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 435 Td (MQA \(32:1\)           16,384        8.00          6.531) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 423 Td (MHA \(32:32\)          32,768      512.00         13.248) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 411 Td (GQA \(32:8\)           32,768      128.00         49.188) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 399 Td (MQA \(32:1\)           32,768       16.00         11.880) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 380 Td (Cache figures are calculated tensor capacities; latency figures are reported CPU measurements.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 366 Td (They are not GPU memory readings, full-model generation timings, or general hardware rankings.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 352 Td (In these runs GQA reduces cache size but is slower than MHA at every tested context length.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 338 Td (Explicit grouped operations and backend behaviour can outweigh storage savings.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 317 Td (The report records passing independent-reference, token/chunk cache equivalence, and) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 303 Td (causal-isolation checks for Q:KV ratios 4:4, 4:2, and 4:1, plus cache append, storage, reset,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 289 Td (bounds, and dtype checks. The corresponding 03_GQA_and_KVCache_Benchmark_starter.py and) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 275 Td (machine-readable result file are absent from the current working tree, limiting immediate) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 261 Td (reproducibility.) Tj ET
+0.10 0.24 0.35 rg BT /F2 11 Tf 48 232 Td (2.5 Memory hierarchy and safety audit) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 208 Td (The retained memory audit separates full attention intermediates from persistent KV storage.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 194 Td (Standard attention materialises quadratic score/probability data. FlashAttention tiles) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 180 Td (computation to reduce movement between high-bandwidth memory and SRAM and avoids storing the) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 166 Td (complete quadratic intermediates. It does not eliminate quadratic full-sequence arithmetic or) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 152 Td (persistent KV-cache growth.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 131 Td (For the audit's model, standard attention IO is Theta\(N*d + N^2\); the tiled bound is O\(N*d +) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 117 Td (N^2*d^2/M\), where M is SRAM capacity in scalar elements and the bound depends on the stated) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 103 Td (cache regime. At fixed d and M, the second term remains quadratic. Describing this as) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 89 Td (unconditionally linear IO would be inaccurate.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 68 Td (Under the audit's simplified capacity assumptions, a 65,536-token session needs 32 GiB for) Tj ET
+0.40 0.45 0.50 rg BT /F1 8 Tf 48 28 Td (Squad Sutskever | Solution Report: Mission 3  Author: Syed Hashir Sohail | Page 2) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 3918 >>
+stream
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 788 Td (MHA, 8 GiB for GQA, or 1 GiB for MQA. A dedicated 64 GiB KV budget fits two, eight, or 64 such) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 774 Td (sessions respectively; the next session exceeds that budget. These are analytical examples,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 760 Td (not observed CUDA out-of-memory events. Real capacity depends on weights, activations,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 746 Td (fragmentation, temporary buffers, and runtime headroom.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 725 Td (The audit recommends admission budgeting, tenant quotas, context and concurrency limits,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 711 Td (monitoring, and graceful overload handling. PagedAttention addresses allocation and) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 697 Td (fragmentation; GQA and latent-cache approaches reduce bytes per token. These techniques) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 683 Td (complement enforceable resource limits rather than guaranteeing unlimited capacity.  ## 3.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 669 Td (Team allocation and review status  The allocation targets 25% of mission responsibilities per) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 655 Td (person. It is a plan, not measured historical contribution or completed sign-off.  Syed Hashir) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 641 Td (Sohail: attention core and shared notebook coordination.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 620 Td (Yasan Malik: memory hierarchy and safety audit.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 599 Td (Usman Tariq Qureshi: RoPE positional engine.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 578 Td (Sufyan Khalid: GQA/cache implementation and benchmark.  Current team reviews remain pending in) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 564 Td (TEAM_ALLOCATION.md. Historical completion checkboxes do not establish current sign-off.  ## 4.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 550 Td (Reproduction guide  Run the following commands from the repository root after restoring any) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 536 Td (missing dependencies:  python mission-03/02_RoPE_Positional_Engine.py) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 522 Td (python mission-03/01_MultiHead_Attention_Core_starter.py) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 510 Td (python mission-03/03_GQA_and_KVCache_Benchmark_starter.py --verify-only  Use a Python environment) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 498 Td (with PyTorch and NumPy, plus Matplotlib for plotting. Restore the attention and GQA source modules) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 486 Td (before running those commands or the full notebook. ps03_solution.ipynb supports its documented) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 474 Td (project-root or mission-directory layout. Previous output does not establish that a fresh run) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 462 Td (succeeded.  ## 5. Local evidence sources  - ps03_solution.ipynb: recorded attention checks and) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 450 Td (compatibility output.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 438 Td (- 02_RoPE_Positional_Engine.py: rotary embedding implementation and demonstrations.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 424 Td (- results/gqa_kvcache_report.md: benchmark method, results, and limitations.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 410 Td (- 04_Memory_Hierarchy_and_Safety_Audit_template.md: analytical IO, capacity, and safety) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 396 Td (assessment.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 382 Td (- TEAM_ALLOCATION.md: planned responsibilities and pending reviews.  The PDF is generated from) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 368 Td (this Markdown source.) Tj ET
+0.40 0.45 0.50 rg BT /F1 8 Tf 48 28 Td (Squad Sutskever | Solution Report: Mission 3  Author: Syed Hashir Sohail | Page 3) Tj ET
+endstream
+endobj
+xref
+0 12
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000130 00000 n 
+0000000200 00000 n 
+0000000275 00000 n 
+0000000343 00000 n 
+0000000489 00000 n 
+0000005983 00000 n 
+0000006129 00000 n 
+0000012000 00000 n 
+0000012148 00000 n 
+trailer
+<< /Size 12 /Root 1 0 R >>
+startxref
+16118
+%%EOF
