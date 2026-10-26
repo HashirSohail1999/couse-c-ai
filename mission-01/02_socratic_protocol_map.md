@@ -3,8 +3,8 @@
 **Starship Operational Unit:** USSE Noosphere Bridge Crew  
 **Station Role:** Protocol & Interface Specialist  
 **Officer:** Usman Tariq Qureshi  
-**Current team:** Squadron Sutskever<br>
-**Squad:** Squadron Sutskever<br>
+**Current team:** Sutskever<br>
+**Squad:** Sutskever<br>
 **Deliverable File:** `02_Socratic_Protocol_Map.md`  
 
 ---
@@ -543,7 +543,7 @@ The Python module below implements the Socratic state machine structure, ready f
 """
 USSE Noosphere: Socratic Elenchus State Transducer Engine
 Officer: Protocol & Interface Specialist (Usman Tariq Qureshi)
-Squadron: Squadron Sutskever
+Squadron: Sutskever
 Architecture: Deterministic Finite State Transducer with Dynamic DST Ledger
 """
 

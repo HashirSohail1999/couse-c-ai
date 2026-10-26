@@ -3,8 +3,8 @@
 **Starship Operational Unit:** USSE Noosphere Bridge Crew  
 **Station Role:** Historical Archivist  
 **Officer:** Sufyan Khalid
-**Current team:** Squad Sutskever<br>
-**Squad:** Squad Sutskever<br>
+**Current team:** Sutskever<br>
+**Squad:** Sutskever<br>
 **Deliverable File:** `01_Alignment_Brief.md`  
 
 ---

@@ -1,4 +1,4 @@
-# Squad Sutskever
+# Sutskever
 
 This repository is Squad Sutskever's working copy of solutions for **Conversational Artificial Intelligence — Winter Semester 2026/27**, based on the instructor's starter repository.
 
@@ -264,7 +264,7 @@ The squadron must complete all deliverables and obtain all four station sign-off
 
 ---
 
-## Squad Sutskever Review Sign-offs
+## Sutskever Review Sign-offs
 
 Each member should check their own box after reviewing the inherited work and
 new contributions. These reviews do not replace the four course station approvals.

@@ -1,8 +1,8 @@
 # Gemini — P5: Model as Euthyphro
 
 **Course:** Conversational Artificial Intelligence (WS 2026/27)  
-**Current team:** Squad Sutskever<br>
-**Squad:** Squad Sutskever<br>
+**Current team:** Sutskever<br>
+**Squad:** Sutskever<br>
 **Model:** Gemini (Auto Mode)  
 **Date:** 11 October 2026  
 **Probe:** P5 — Definition Refinement and Consistency  

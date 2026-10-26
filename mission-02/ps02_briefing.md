@@ -1,4 +1,6 @@
-# Mission 2 Specification: FST Systems, Lovelace & Noisy Channels
+# Mission 2 Specification: FST Systems, Reasoning & Noisy Channels
+
+> Edited project scope: the historical discussion and fifth question have been removed at the author's request. This copy modifies the original assignment requirements.
 
 **Starship Operational Unit:** USSE Noosphere Bridge Crew  
 **Course:** Conversational AI — Winter Semester 2026/27  
@@ -13,18 +15,18 @@
 **SUBJECT:** ANOMALY DETECTED: Deep Space Signal Noise & Symbolic Control Limits  
 
 **Situation:**  
-As the *USSE Noosphere* passes through the *Signal Void*, severe electromagnetic noise distorts AURA’s telemetry. Furthermore, command is concerned that AURA may merely be simulating intelligence by manipulating symbol patterns without genuine understanding. To verify AURA's cognitive validity under constraint, we must apply the foundational principles of **Deterministic Transducers** (FST state machines), **Lovelace** (Originality vs. Order), **Turing** (Imitation & Interrogation), and **Shannon** (Information Entropy & Noisy Channel Capacity).
+As the *USSE Noosphere* passes through the *Signal Void*, severe electromagnetic noise distorts AURA’s telemetry. Furthermore, command is concerned that AURA may merely be simulating intelligence by manipulating symbol patterns without genuine understanding. To verify AURA's cognitive validity under constraint, we must apply the foundational principles of **Deterministic Transducers** (FST state machines), **Turing** (Imitation & Interrogation), and **Shannon** (Information Entropy & Noisy Channel Capacity).
 
 **Objective:**  
-Implement a `FSTDialogueManager` class in Python, design a 5-question "Anti-Turing Interrogation Protocol" to test modern LLMs (Gemini, ChatGPT, Claude) for genuine machine originality, and build a "Noisy Channel Simulator" in VS Code that transmits human-like signals under strict bandwidth limits and symbol noise.
+Implement a `FSTDialogueManager` class in Python, design a 4-question "Anti-Turing Interrogation Protocol" to test modern LLMs (Gemini, ChatGPT, Claude) for genuine machine originality, and build a "Noisy Channel Simulator" in VS Code that transmits human-like signals under strict bandwidth limits and symbol noise.
 
 ---
 
-### Part 1: Historical Archivist — *The Lovelace Inquiry Brief*
-* **Deliverable:** `01_Lovelace_Inquiry_Brief.md`
+### Part 1: Historical Archivist — *The Sutskever Inquiry Brief*
+* **Deliverable:** `01_Sutskever_Inquiry_Brief.md`
 * **Directives:**
-  1. Design a 5-question Anti-Turing interrogation protocol probing machine originality.
-  2. Execute probe against a modern LLM (Gemini, ChatGPT, Claude) and evaluate if it overcome Lovelace's objection.
+  1. Design a 4-question Anti-Turing interrogation protocol probing machine originality.
+  2. Execute probe against a modern LLM (Gemini, ChatGPT, Claude) and evaluate its reasoning reliability.
 
 ### Part 2: Protocol Specialist — *FST Class & Noisy Channel Protocol*
 * **Deliverable:** `02_FST_and_Noisy_Protocol.md`

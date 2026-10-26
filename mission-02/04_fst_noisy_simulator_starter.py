@@ -1,4 +1,5 @@
 """
+Author: Syed Hashir Sohail
 Mission 02: FST Dialogue Manager & Noisy Channel Simulator Starter Script
 Course: Conversational AI (WS 2026/27)
 Starship Unit: USSE Noosphere
