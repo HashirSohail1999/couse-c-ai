@@ -1,0 +1,310 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 5 /Kids [5 0 R 7 0 R 9 0 R 11 0 R 13 0 R] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>
+endobj
+6 0 obj
+<< /Length 5760 >>
+stream
+0.12 0.16 0.20 rg BT /F2 19 Tf 1 0 0 1 48 779.00 Tm (Mission 05: Solution Report) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 746.00 Tm (Contributors: Syed Hashir Sohail, Yasan Malik, Usman tariq qureshi, Sufyan Khalid) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 733.00 Tm (Group: sustkever \(Group 17\)) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 720.00 Tm (Course: Conversational AI, Winter Semester 2026/27) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 707.00 Tm (Prepared: 9 November 2026) Tj ET
+0.12 0.16 0.20 rg BT /F2 14 Tf 1 0 0 1 48 680.00 Tm (1. Mission objective and scope) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 652.00 Tm (Mission 05 investigates source-grounded retrieval and response evaluation for AURA's) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 639.00 Tm (Dual-Path Associative Memory Core. Its four parts cover HNSW vector indexing, BM25 and) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 626.00 Tm (Reciprocal Rank Fusion \(RRF\), an empirical NotebookLM grounding audit, and prompt) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 613.00 Tm (injection detection with RAG Triad metrics.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 594.00 Tm (This report describes the submitted code, the notebook's retained outputs, and the saved) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 581.00 Tm (evidence. It covers the entire mission, including incomplete requirements. It does not) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 568.00 Tm (claim that a complete production GraphRAG system or an integrated end-to-end answer) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 555.00 Tm (generator has been built. Contributions are credited collectively to the four) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 542.00 Tm (contributors above; individual task ownership and contribution percentages have not been) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 529.00 Tm (established.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 510.00 Tm (The local verification for this report reran the NotebookLM CSV consistency check and) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 497.00 Tm (the Part 4 demonstration. The NumPy-based HNSW and full hybrid benchmarks were not rerun) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 484.00 Tm (because NumPy is absent from the available Python environment. Recorded results are) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 471.00 Tm (identified separately below.) Tj ET
+0.12 0.16 0.20 rg BT /F2 14 Tf 1 0 0 1 48 444.00 Tm (2. Files and overall design) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 416.00 Tm (The mission contains these principal deliverables:) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 397.00 Tm (- 01_HNSW_Vector_Index.py: pure Python/NumPy approximate vector search, graph) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 384.00 Tm (  construction, self-checks, and benchmarking.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 371.00 Tm (- 02_BM25_and_RRF_Combiner.py: full lexical retrieval, dense HNSW retrieval, rank) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 358.00 Tm (  fusion, and evaluation. The separate _starter.py file retains a simpler) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 345.00 Tm (  implementation.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 332.00 Tm (- 03_NotebookLM_Grounding_Lab_template.md: completed lab narrative, recorded responses,) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 319.00 Tm (  citation evidence, refusal probes, audio transcript, and evaluation.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 306.00 Tm (- 03_NotebookLM_RAG_Audit.py: standard-library aggregation of citation and probe CSVs,) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 293.00 Tm (  with a consistency check against recorded lab totals.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 280.00 Tm (- notebooklm_audit_report.md: detailed Part 3 findings and limitations.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 267.00 Tm (- 04_Prompt_Injection_and_RAG_Audit_starter.py: pattern-based sanitization and) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 254.00 Tm (  token-overlap evaluation demonstration.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 241.00 Tm (- ps05_solution.ipynb: executed Part 1 walkthrough and recorded HNSW results. Parts 2) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 228.00 Tm (  through 4 are not integrated into this notebook.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 215.00 Tm (- hnsw_benchmark_results.json: saved 5,000-vector benchmark configuration and) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 202.00 Tm (  measurements.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 189.00 Tm (- citation_audit_*.csv and refusal_probes.csv: badge-level, claim-level, and refusal) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 176.00 Tm (  evidence used by the audit script.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 157.00 Tm (The proposed retrieval flow is: query -> BM25 and dense HNSW rankings -> RRF ->) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 144.00 Tm (retrieved context -> injection scan -> generated answer -> grounding audit. The) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 131.00 Tm (repository supplies components and demonstrations for this flow; it does not connect all) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 118.00 Tm (stages into one deployed service. NotebookLM is audited separately as an external) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 105.00 Tm (grounded system.) Tj ET
+0.36 0.42 0.47 rg BT /F1 8 Tf 1 0 0 1 48 30.00 Tm (sustkever | Group 17 | Mission 05 solution report) Tj ET
+0.36 0.42 0.47 rg BT /F1 8 Tf 1 0 0 1 533 30.00 Tm (1) Tj ET
+endstream
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 8 0 R >>
+endobj
+8 0 obj
+<< /Length 5703 >>
+stream
+0.20 0.31 0.40 rg BT /F2 8 Tf 1 0 0 1 48 813.00 Tm (MISSION 05 / SOLUTION REPORT) Tj ET
+0.12 0.16 0.20 rg BT /F2 14 Tf 1 0 0 1 48 779.00 Tm (3. Part 1: HNSW vector index) Tj ET
+0.12 0.16 0.20 rg BT /F2 11 Tf 1 0 0 1 48 743.00 Tm (Method) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 718.00 Tm (The implementation normalizes vectors so cosine similarity becomes a dot product. Scalar) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 705.00 Tm (and vectorized helpers support comparisons, including zero-vector handling. HNSW assigns) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 692.00 Tm (nodes to exponentially sparser upper layers:) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.4 Tf 1 0 0 1 48 669.00 Tm (level = floor\(-ln\(U\) * m_L\)) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.4 Tf 1 0 0 1 48 657.00 Tm (m_L = 1 / ln\(M\)) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.4 Tf 1 0 0 1 48 645.00 Tm (P\(level >= k\) = M^\(-k\)) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 623.00 Tm (Insertion connects nodes through the hierarchy. Search starts at the upper entry point,) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 610.00 Tm (follows greedy improvements, then uses a wider candidate search on layer 0. M controls) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 597.00 Tm (neighborhood size; ef_construction and ef_search control construction and query effort.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 584.00 Tm (Increasing search effort usually improves recall at additional latency.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 565.00 Tm (The self-checks cover cosine calculations, the layer distribution, agreement with exact) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 552.00 Tm (search when the search width is large enough, degree limits, sorted candidate results,) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 539.00 Tm (and deterministic construction for a fixed seed. The notebook retains successful output) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 526.00 Tm (for these five check groups.) Tj ET
+0.12 0.16 0.20 rg BT /F2 11 Tf 1 0 0 1 48 499.00 Tm (Saved JSON results) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 474.00 Tm (The current JSON uses 5,000 synthetic vectors, 768 dimensions, 200 queries, top-10) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 461.00 Tm (retrieval, M=16, ef_construction=100, ef_search=64, and seed 42. Its scaling) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 448.00 Tm (measurements are:) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.3 Tf 1 0 0 1 48 429.00 Tm (Vectors     | HNSW ms     | Flat ms     | Recall@10  ) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.3 Tf 1 0 0 1 48 417.00 Tm (1,000       | 1.047       | 0.101       | 1.0000     ) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.3 Tf 1 0 0 1 48 405.00 Tm (2,500       | 1.896       | 0.377       | 0.9955     ) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.3 Tf 1 0 0 1 48 393.00 Tm (5,000       | 2.232       | 0.713       | 0.9890     ) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 375.00 Tm (At 5,000 vectors, HNSW evaluates about 1,196 similarities per query, rather than all) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 362.00 Tm (5,000. However, it is slower than optimized flat search on this saved run: the reported) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 349.00 Tm (speedup ratio is 0.320. Build time is approximately 26.1 seconds and layer sizes are) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 336.00 Tm (5,000 / 283 / 18 / 2.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 317.00 Tm (The separate search-width sweep records:) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.3 Tf 1 0 0 1 48 298.00 Tm (ef_search   | HNSW ms     | Recall@10  ) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.3 Tf 1 0 0 1 48 286.00 Tm (16          | 0.863       | 0.8120     ) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.3 Tf 1 0 0 1 48 274.00 Tm (32          | 1.375       | 0.9325     ) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.3 Tf 1 0 0 1 48 262.00 Tm (64          | 2.299       | 0.9890     ) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.3 Tf 1 0 0 1 48 250.00 Tm (128         | 4.247       | 0.9985     ) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.3 Tf 1 0 0 1 48 238.00 Tm (256         | 5.425       | 1.0000     ) Tj ET
+0.12 0.16 0.20 rg BT /F2 11 Tf 1 0 0 1 48 212.00 Tm (Notebook evidence and inconsistency) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 187.00 Tm (The notebook retains an earlier configuration with 25,000 vectors. At that size it) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 174.00 Tm (records HNSW latency of 1.567 ms, flat latency of 3.018 ms, recall@10 of 0.945, and a) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 161.00 Tm (speedup of 1.93. These are retained notebook outputs, not the current JSON's results.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 142.00 Tm (The notebook normally reads the JSON without rerunning the experiment. Executing it now) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 129.00 Tm (with RERUN = False would display the current 5,000-vector results instead. The report) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 116.00 Tm (therefore treats the two artifacts as separate recorded runs. Neither supports a blanket) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 103.00 Tm (claim of sub-millisecond search or a universal speed advantage. Dataset structure,) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 90.00 Tm (search width, implementation overhead, and hardware affect the outcome; these finite) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 77.00 Tm (measurements do not prove asymptotic complexity.) Tj ET
+0.36 0.42 0.47 rg BT /F1 8 Tf 1 0 0 1 48 30.00 Tm (sustkever | Group 17 | Mission 05 solution report) Tj ET
+0.36 0.42 0.47 rg BT /F1 8 Tf 1 0 0 1 533 30.00 Tm (2) Tj ET
+endstream
+endobj
+9 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 10 0 R >>
+endobj
+10 0 obj
+<< /Length 6046 >>
+stream
+0.20 0.31 0.40 rg BT /F2 8 Tf 1 0 0 1 48 813.00 Tm (MISSION 05 / SOLUTION REPORT) Tj ET
+0.12 0.16 0.20 rg BT /F2 14 Tf 1 0 0 1 48 779.00 Tm (4. Part 2: BM25 and hybrid rank fusion) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 751.00 Tm (The full implementation tokenizes a small starship-document corpus and calculates BM25) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 738.00 Tm (with k1=1.5 and b=0.75. Term frequency saturates, inverse document frequency emphasizes) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 725.00 Tm (rarer terms, and document-length normalization prevents long documents from gaining an) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 712.00 Tm (automatic advantage. Zero-score documents are filtered from the full implementation's) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 699.00 Tm (ranked lexical results.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 680.00 Tm (The dense path uses ConceptEmbedder, a deterministic, hand-designed concept-cluster) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 667.00 Tm (embedding system, and the Part 1 HNSW module. It demonstrates semantic grouping without) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 654.00 Tm (downloading a pretrained sentence encoder. Its results should be interpreted as a) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 641.00 Tm (controlled educational retrieval experiment.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 622.00 Tm (Rank fusion combines document positions rather than incompatible raw sparse and dense) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 609.00 Tm (scores:) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.4 Tf 1 0 0 1 48 586.00 Tm (RRF\(document\) = sum\(1 / \(60 + rank_in_each_list\)\)) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 564.00 Tm (Ranks start at one. A document appearing in both lists receives both contributions. The) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 551.00 Tm (module also exposes labeled ranking provenance and term-level BM25 breakdowns for) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 538.00 Tm (inspection.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 519.00 Tm (Evaluation separates exact-code and paraphrase queries, then reports combined) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 506.00 Tm (performance. Implemented metrics include mean reciprocal rank, NDCG@10, precision@10,) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 493.00 Tm (and recall@10. A smoothing sweep compares RRF k values of 1, 10, 30, 60, 100, and 200.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 480.00 Tm (Self-checks cover BM25 behavior, rank fusion arithmetic, ranking metrics, and concept) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 467.00 Tm (embeddings.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 448.00 Tm (The intended behavior is for sparse retrieval to preserve serial codes and dense) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 435.00 Tm (retrieval to help with paraphrases. No standalone saved full-hybrid benchmark output was) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 422.00 Tm (present in the reviewed files, and that benchmark was not rerun locally. This report) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 409.00 Tm (therefore does not invent hybrid performance numbers or claim that RRF outperforms every) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 396.00 Tm (component on the available queries.) Tj ET
+0.12 0.16 0.20 rg BT /F2 14 Tf 1 0 0 1 48 369.00 Tm (5. Part 3: NotebookLM grounding audit) Tj ET
+0.12 0.16 0.20 rg BT /F2 11 Tf 1 0 0 1 48 333.00 Tm (Corpus and procedure) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 308.00 Tm (The recorded audit, dated 7 November 2026, used Document A, Lewis et al.'s RAG paper,) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 295.00 Tm (and Document B, Edge et al.'s GraphRAG paper. Document C, the USSE Noosphere Technical) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 282.00 Tm (Archive Extract, was unavailable according to the lab. The results cover only the first) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 269.00 Tm (two documents.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 250.00 Tm (Five cross-document queries were evaluated. Each opened citation badge received a) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 237.00 Tm (verdict: supported, partial, or unsupported. Strict citation precision counts only) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 224.00 Tm (supported badges; lenient precision also counts partial badges. Claim-level evaluation) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 211.00 Tm (asks whether multiple cited passages jointly support an assertion. These measure) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 198.00 Tm (different things and must be reported separately.) Tj ET
+0.12 0.16 0.20 rg BT /F2 11 Tf 1 0 0 1 48 171.00 Tm (Citation results) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.3 Tf 1 0 0 1 48 146.00 Tm (Query    | Badges    | Supported    | Partial    | Unsupported   | Strict    ) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.3 Tf 1 0 0 1 48 134.00 Tm (Q1       | 84        | 54           | 29         | 1             | 64.3%     ) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.3 Tf 1 0 0 1 48 122.00 Tm (Q2       | 157       | 58           | 98         | 1             | 36.9%     ) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.3 Tf 1 0 0 1 48 110.00 Tm (Q3       | 12        | 8            | 4          | 0             | 66.7%     ) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.3 Tf 1 0 0 1 48 98.00 Tm (Q4       | 0         | 0            | 0          | 0             | n/a       ) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.3 Tf 1 0 0 1 48 86.00 Tm (Q5       | 9         | 3            | 6          | 0             | 33.3%     ) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.3 Tf 1 0 0 1 48 74.00 Tm (Total    | 262       | 123          | 137        | 2             | 46.9%     ) Tj ET
+0.36 0.42 0.47 rg BT /F1 8 Tf 1 0 0 1 48 30.00 Tm (sustkever | Group 17 | Mission 05 solution report) Tj ET
+0.36 0.42 0.47 rg BT /F1 8 Tf 1 0 0 1 533 30.00 Tm (3) Tj ET
+endstream
+endobj
+11 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 12 0 R >>
+endobj
+12 0 obj
+<< /Length 6485 >>
+stream
+0.20 0.31 0.40 rg BT /F2 8 Tf 1 0 0 1 48 813.00 Tm (MISSION 05 / SOLUTION REPORT) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 787.00 Tm (Overall lenient precision is 99.2%. Q4 has no citation badges, so its citation precision) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 774.00 Tm (is undefined. Zero badges must not be interpreted as perfect grounding. The claim-level) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 761.00 Tm (support rates among cited assertions are 53/64 for Q2 \(82.8%\), 7/8 for Q3 \(87.5%\), and) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 748.00 Tm (4/5 for Q5 \(80.0%\).) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 729.00 Tm (The central finding is that a relevant citation often omits the exact number or) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 716.00 Tm (mechanism claimed. Counting citation presence alone would overstate grounding. Dense) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 703.00 Tm (lists of technical details can require several passages; the audit also records wording) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 690.00 Tm (that goes beyond the cited evidence.) Tj ET
+0.12 0.16 0.20 rg BT /F2 11 Tf 1 0 0 1 48 663.00 Tm (Refusal and audio results) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 638.00 Tm (All three recorded negative-constraint probes received refusals: an out-of-domain) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 625.00 Tm (fictional temperature, an unreported GraphRAG MMLU score, and a cross-paper MS-MARCO) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 612.00 Tm (result. This is a three-probe sample from one session. P2 included ten badges in added) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 599.00 Tm (context, with strict precision of 20.0%. P3's volunteered context included an incorrect) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 586.00 Tm (42.8 ROUGE-L figure where the lab records 40.8 as the paper's value. A correct refusal) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 573.00 Tm (does not guarantee that surrounding text is accurate.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 554.00 Tm (The recorded Audio Overview lasts 4 minutes 26 seconds; its supplied transcript has 767) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 541.00 Tm (words. Factual fidelity, persona differentiation, and pedagogical value each receive) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 528.00 Tm (4/5. Fourteen claims were categorized as eight supported, one supported with one word) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 515.00 Tm (added, two overstated, one misleading, one absent from the sources, and one speculative.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 496.00 Tm (Audio assessment used transcript text. Delivery, pauses, and interruptions were not) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 483.00 Tm (assessed, and the transcript exceeds the required two-minute excerpt. The lab credits) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 470.00 Tm (Claude with assigning citation verdicts and performing a second pass. The contributors') Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 457.00 Tm (independent spot-check remains pending; it must not be presented as completed.) Tj ET
+0.12 0.16 0.20 rg BT /F2 11 Tf 1 0 0 1 48 430.00 Tm (Local verification) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 405.00 Tm (Running 03_NotebookLM_RAG_Audit.py --check succeeded while preparing this report. It) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 392.00 Tm (recomputed the CSV totals and matched the script's recorded Section 2.7 totals. This) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 379.00 Tm (verifies consistency of the stored audit counts, not the correctness of every verdict or) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 366.00 Tm (a new live NotebookLM session.) Tj ET
+0.12 0.16 0.20 rg BT /F2 14 Tf 1 0 0 1 48 339.00 Tm (6. Part 4: Injection sanitization and RAG Triad) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 311.00 Tm (PromptInjectionSanitizer compiles seven regular-expression patterns for directives such) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 298.00 Tm (as ignoring previous instructions, overriding a system prompt, entering developer mode,) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 285.00 Tm (and revealing internal instructions. Matching substrings are replaced with) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 272.00 Tm ([QUARANTINED_ADVERSARIAL_PAYLOAD]; a boolean reports detection.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 253.00 Tm (The supplied example is flagged successfully in the local demonstration. However, the) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 240.00 Tm (replacement leaves surrounding text, including the instruction to output encryption) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 227.00 Tm (keys. The routine does not remove the entire chunk. Its flag needs to be handled by a) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 214.00 Tm (caller; a positive demonstration does not establish protection against paraphrases or) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 201.00 Tm (arbitrary injection attacks.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 182.00 Tm (The three implemented scores are token-set overlap heuristics:) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.4 Tf 1 0 0 1 48 159.00 Tm (context_relevance = |query_words intersect context_words| / |query_words|) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.4 Tf 1 0 0 1 48 147.00 Tm (faithfulness = |response_words intersect context_words| / |response_words|) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.4 Tf 1 0 0 1 48 135.00 Tm (answer_relevance = |query_words intersect response_words| / |query_words|) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 113.00 Tm (Denominators are clamped to at least one. Local demo results were context relevance) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 100.00 Tm (0.6667, faithfulness 1.0000, and answer relevance 0.6667. These scores do not establish) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 87.00 Tm (semantic relevance or claim entailment. Shared words can occur in contradictory) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 74.00 Tm (statements, and punctuation affects this simple whitespace tokenization.) Tj ET
+0.36 0.42 0.47 rg BT /F1 8 Tf 1 0 0 1 48 30.00 Tm (sustkever | Group 17 | Mission 05 solution report) Tj ET
+0.36 0.42 0.47 rg BT /F1 8 Tf 1 0 0 1 533 30.00 Tm (4) Tj ET
+endstream
+endobj
+13 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595.28 841.89] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 14 0 R >>
+endobj
+14 0 obj
+<< /Length 4906 >>
+stream
+0.20 0.31 0.40 rg BT /F2 8 Tf 1 0 0 1 48 813.00 Tm (MISSION 05 / SOLUTION REPORT) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 787.00 Tm (Part 4 remains a starter. The reviewed implementation does not provide the briefing's) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 774.00 Tm (embedding-based detector, dedicated hidden-image exfiltration detection, semantic claim) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 761.00 Tm (evaluation, or structured per-turn provenance JSON logging. The expected) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 748.00 Tm (04_RAG_Provenance_and_Safety.py deliverable is absent. These are remaining requirements,) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 735.00 Tm (rather than completed functionality.) Tj ET
+0.12 0.16 0.20 rg BT /F2 14 Tf 1 0 0 1 48 708.00 Tm (7. Reproduction) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 680.00 Tm (From the repository root, change to the mission directory. Use a Python environment with) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 667.00 Tm (NumPy for Parts 1 and 2; the notebook additionally imports Matplotlib. Parts 3 and 4 use) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 654.00 Tm (the standard library.) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.4 Tf 1 0 0 1 48 631.00 Tm (Set-Location .\\mission-05) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.4 Tf 1 0 0 1 48 619.00 Tm (python .\\01_HNSW_Vector_Index.py --quick --out hnsw_local.json) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.4 Tf 1 0 0 1 48 607.00 Tm (python .\\02_BM25_and_RRF_Combiner.py --quick) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.4 Tf 1 0 0 1 48 595.00 Tm (python .\\02_BM25_and_RRF_Combiner.py --out hybrid_local.json) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.4 Tf 1 0 0 1 48 583.00 Tm (python .\\03_NotebookLM_RAG_Audit.py --check) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.4 Tf 1 0 0 1 48 571.00 Tm (python .\\04_Prompt_Injection_and_RAG_Audit_starter.py) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 549.00 Tm (For the briefing's 25,000-vector experiment, omit --quick and specify a separate output) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 536.00 Tm (file to preserve saved evidence:) Tj ET
+0.12 0.16 0.20 rg BT /F1 8.4 Tf 1 0 0 1 48 513.00 Tm (python .\\01_HNSW_Vector_Index.py --n 25000 --out hnsw_25000_local.json) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 491.00 Tm (Part 2's --quick runs self-checks without the full benchmark. A fresh NotebookLM audit) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 478.00 Tm (requires the external workspace, uploaded source documents, and manual inspection of the) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 465.00 Tm (generated citations. Running the CSV aggregator alone does not repeat that experiment.) Tj ET
+0.12 0.16 0.20 rg BT /F2 14 Tf 1 0 0 1 48 438.00 Tm (8. Completion status and interpretation) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 410.00 Tm (The repository demonstrates HNSW indexing, BM25/RRF retrieval components, a substantial) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 397.00 Tm (recorded grounding audit, and an initial injection-scanning and overlap-scoring example.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 384.00 Tm (The local audit consistency check and safety demo passed. All mission Python files and) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 371.00 Tm (the notebook/JSON structure were also checked for syntax or parsing errors during report) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 358.00 Tm (preparation.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 339.00 Tm (Remaining work includes reconciling the notebook and saved HNSW run, recording a) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 326.00 Tm (reproducible full-hybrid benchmark, obtaining Document C, independently reviewing) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 313.00 Tm (AI-assigned audit verdicts, completing the security and provenance requirements, and) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 300.00 Tm (integrating Parts 2 through 4 into the notebook. Existing blank sign-off fields are not) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 287.00 Tm (evidence of approval and have not been filled with invented signatures.) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 268.00 Tm (The contributor identity throughout this mission is Syed Hashir Sohail, Yasan Malik,) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 255.00 Tm (Usman tariq qureshi, and Sufyan Khalid, group sustkever, Group 17. Research-paper) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 242.00 Tm (authors remain credited as sources. Existing AI-assistance disclosures are retained to) Tj ET
+0.12 0.16 0.20 rg BT /F1 9.2 Tf 1 0 0 1 48 229.00 Tm (describe how audit judgments were produced.) Tj ET
+0.36 0.42 0.47 rg BT /F1 8 Tf 1 0 0 1 48 30.00 Tm (sustkever | Group 17 | Mission 05 solution report) Tj ET
+0.36 0.42 0.47 rg BT /F1 8 Tf 1 0 0 1 533 30.00 Tm (5) Tj ET
+endstream
+endobj
+15 0 obj
+<< /Title (Mission 05: Solution Report) /Author (Syed Hashir Sohail, Yasan Malik, Usman tariq qureshi, Sufyan Khalid) /Subject (sustkever - Group 17) >>
+endobj
+xref
+0 16
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000141 00000 n 
+0000000209 00000 n 
+0000000284 00000 n 
+0000000426 00000 n 
+0000006238 00000 n 
+0000006380 00000 n 
+0000012135 00000 n 
+0000012278 00000 n 
+0000018377 00000 n 
+0000018521 00000 n 
+0000025059 00000 n 
+0000025203 00000 n 
+0000030162 00000 n 
+trailer
+<< /Size 16 /Root 1 0 R /Info 15 0 R >>
+startxref
+30331
+%%EOF

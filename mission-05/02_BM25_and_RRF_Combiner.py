@@ -3,6 +3,8 @@ Mission 05 -- Part 2: Communications & Protocol Officer
 Okapi BM25 Lexical Retrieval & Reciprocal Rank Fusion (RRF)
 
 Starship Operational Unit: USSE Noosphere Bridge Crew
+Contributors: Syed Hashir Sohail, Yasan Malik, Usman tariq qureshi, Sufyan Khalid
+Group: sustkever (Group 17)
 Sector: SEC-05-M01 (Crab Pulsar Remnant / Messier 1)
 Subsystem 05: Dual-Path Associative Memory Core
 

@@ -1,5 +1,9 @@
 # Mission 05: Dual-Path GraphRAG, Hybrid Search & The Google NotebookLM Grounding Lab
 
+**Contributors:** Syed Hashir Sohail, Yasan Malik, Usman tariq qureshi, Sufyan Khalid
+
+**Group:** sustkever (Group 17)
+
 **Starship Operational Unit:** USSE Noosphere Bridge Crew  
 **Course:** Conversational AI — Winter Semester 2026/27  
 **Module:** Week 5 — Grounding AI: From Vector Indexing to Google NotebookLM & GraphRAG  
@@ -12,6 +16,8 @@
 ## Mission Folder Structure & Role Deliverables
 
 This repository folder contains the starter assets and templates for **Mission 5**.
+
+See the [full Mission 05 solution report](05_solution_report.md) ([PDF version](05_solution_report.pdf)) for the implementation, recorded results, reproduction steps, and remaining requirements.
 
 ```
 mission-05/

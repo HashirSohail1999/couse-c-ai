@@ -3,9 +3,10 @@ Mission 05 — Part 3: Data & Payload Specialist
 Google NotebookLM Grounding & Citation Audit — scoring script
 
 Starship Operational Unit: USSE Noosphere Bridge Crew
+Contributors: Syed Hashir Sohail, Yasan Malik, Usman tariq qureshi, Sufyan Khalid
+Group: sustkever (Group 17)
 Sector: SEC-05-M01 (Crab Pulsar Remnant / Messier 1)
 Subsystem 05: Dual-Path Associative Memory Core
-Officer: Syed Hashir Sohail, Yasan Malik, Usman tariq qureshi, Sufyan Khalid / Squadron sustkever Group 17
 
 What this script does
 ---------------------

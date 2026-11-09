@@ -1,5 +1,9 @@
 # Mission 5: Dual-Path GraphRAG, Hybrid Search & The Google NotebookLM Grounding Lab
 
+**Contributors:** Syed Hashir Sohail, Yasan Malik, Usman tariq qureshi, Sufyan Khalid
+
+**Group:** sustkever (Group 17)
+
 **Starship Operational Unit:** USSE Noosphere Bridge Crew  
 **Course:** Conversational AI — Winter Semester 2026/27  
 **Module:** Week 5 — Grounding AI: From Vector Indexing to Google NotebookLM & GraphRAG  
@@ -20,7 +24,7 @@
 After completing the ethical preference calibration in the Betelgeuse corona, the *USSE Noosphere* enters Sector `SEC-05-M01`, dropping out of hyperspace in the vicinity of the **Crab Pulsar Remnant (Messier 1)**. The central neutron star, spinning at 30 rotations per second, discharges intense synchrotron radiation and relativistic particle jets that bombard the ship's sensor arrays.
 
 **Problem:**  
-Simultaneously, **AURA Subsystem 05 (Dual-Path Associative Memory Core)** suffers catastrophic data corruption. While her internal transformer layers and preference steering vectors remain functional, her connection to the ship's non-parametric knowledge archives is severed. When queried for flight coordinates or technical engine telemetry, AURA confabulates plausible-sounding but completely fictitious astrogation logs. 
+Simultaneously, **AURA Subsystem 05 (Dual-Path Associative Memory Core)** suffers catastrophic data corruption. While his internal transformer layers and preference steering vectors remain functional, his connection to the ship's non-parametric knowledge archives is severed. When queried for flight coordinates or technical engine telemetry, AURA confabulates plausible-sounding but completely fictitious astrogation logs.
 
 Standard Naive RAG is insufficient: local vector retrieval fetches isolated token fragments that lack corpus-wide global context, while failing on exact part-number lookups.
 

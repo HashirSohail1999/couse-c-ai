@@ -1,6 +1,9 @@
 # Mission 05 — Part 3: NotebookLM Grounding & Citation Audit Report
 
-**Officer / Squadron:** Syed Hashir Sohail, Yasan Malik, Usman tariq qureshi, Sufyan Khalid / Squadron sustkever Group 17 (Data & Payload Specialist)  
+**Contributors:** Syed Hashir Sohail, Yasan Malik, Usman tariq qureshi, Sufyan Khalid
+
+**Group:** sustkever (Group 17)
+
 **Date of the audit:** 2026-11-07  
 **Full evidence:** `03_NotebookLM_Grounding_Lab_template.md` (responses, per-badge tables, transcript). **Script:** `03_NotebookLM_RAG_Audit.py`.
 

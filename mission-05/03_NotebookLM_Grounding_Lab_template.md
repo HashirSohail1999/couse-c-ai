@@ -1,10 +1,14 @@
 # Mission 05 — Part 3: Data & Payload Specialist
+
+**Contributors:** Syed Hashir Sohail, Yasan Malik, Usman tariq qureshi, Sufyan Khalid
+
+**Group:** sustkever (Group 17)
+
 ## Google NotebookLM Grounding & Audio Overview Laboratory
 
 **Starship Operational Unit:** USSE Noosphere Bridge Crew  
 **Waypoint:** Crab Pulsar Remnant / Messier 1 (`SEC-05-M01`, 6,500 ly from Sol)  
 **Subsystem 05:** Dual-Path Associative Memory Core  
-**Officer Name / Squadron:** Syed Hashir Sohail, Yasan Malik, Usman tariq qureshi, Sufyan Khalid / Squadron sustkever Group 17  
 
 ---
 
