@@ -17,6 +17,8 @@ This repository folder contains the starter assets and templates for **Mission 4
 
 See the [Mission 04 Project Summary and Results](SOLUTION_REPORT.md) ([PDF version](SOLUTION_REPORT.pdf)) for an explanation of the code, workflow, recorded findings, and run instructions.
 
+The full mission solution report is also available as [05_solution_report.md](05_solution_report.md) and [05_solution_report.pdf](05_solution_report.pdf).
+
 ```
 mission-04/
 ├── README.md                              <- Mission overview & squad sign-off status
