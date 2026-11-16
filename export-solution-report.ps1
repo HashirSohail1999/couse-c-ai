@@ -1,6 +1,7 @@
 param(
     [Parameter(Mandatory=$true)][string]$Source,
-    [Parameter(Mandatory=$true)][string]$Destination
+    [Parameter(Mandatory=$true)][string]$Destination,
+    [string]$GroupLabel = 'Squad Sutskever'
 )
 $ErrorActionPreference = 'Stop'
 $ascii = [Text.Encoding]::ASCII
@@ -13,7 +14,7 @@ function Escape-Pdf([string]$value) {
 }
 function Finish-Page {
     $number = $pages.Count + 1
-    $footer = Escape-Pdf "Squad Sutskever | $reportTitle | Page $number"
+    $footer = Escape-Pdf "$GroupLabel | $reportTitle | Page $number"
     $null = $page.Append("0.40 0.45 0.50 rg BT /F1 8 Tf 48 28 Td ($footer) Tj ET`n")
     $pages.Add($page.ToString())
     $null = $page.Clear()

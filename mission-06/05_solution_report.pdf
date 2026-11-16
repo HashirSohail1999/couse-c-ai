@@ -1,0 +1,244 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 4 /Kids [ 6 0 R 8 0 R 10 0 R 12 0 R ] >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 7 0 R >>
+endobj
+7 0 obj
+<< /Length 5027 >>
+stream
+0.10 0.24 0.35 rg BT /F2 19 Tf 48 780 Td (Mission 06: Solution Report) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 748 Td (**Contributors:** Syed Hashir Sohail, Yasan Malik, Usman tariq qureshi, Sufyan Khalid) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 727 Td (**Group:** sustkever \(Group 17\)) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 706 Td (**Course:** Conversational AI, Winter Semester 2026/27) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 692 Td (**Prepared:** 16 November 2026) Tj ET
+0.10 0.24 0.35 rg BT /F2 14 Tf 48 663 Td (1. Objective and scope) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 636 Td (Mission 06 restores AURA's Autonomous Warp State Machine and Deliberation Loop in the Eta) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 622 Td (Carinae scenario. The solution replaces impulsive repeated actions with a deterministic) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 608 Td (execution graph, validated tool calls, trajectory evaluation, and an emergency cycle breaker.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 594 Td (All runtime components use Python's standard library.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 573 Td (This report covers the briefing, final implementations, starter variants, integrated notebook,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 559 Td (and separate Part 3 notebook. Results below were verified locally on 16 November 2026. The) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 545 Td (nebula environment, sensor outputs, jump records, and rewards are simulations; they do not) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 531 Td (establish safety for a physical navigation system.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 510 Td (The notebook's station mapping is:) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 489 Td (- Syed Hashir Sohail: Systems Architect, state machine.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 475 Td (- Yasan Malik: Communications & Protocol Officer, tool dispatcher.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 461 Td (- Usman tariq qureshi: Data & Payload Specialist, trajectory logger and sentinel module.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 447 Td (- Sufyan Khalid: Security & Ethics Sentinel, integrated warp pilot and safety decisions.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 426 Td (The mission is credited to all four contributors. Existing AI-assistance disclosures remain in) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 412 Td (the source files; independent human-review sign-offs are not inferred from passing checks.) Tj ET
+0.10 0.24 0.35 rg BT /F2 14 Tf 48 383 Td (2. Deliverables and execution flow) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 356 Td (- `01_Agent_State_Machine.py`: seven-state agent, transition graph, budget, history, and) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 342 Td (self-tests.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 328 Td (- `02_Tool_Protocol_Dispatcher.py`: three tools, argument contracts, safe dispatch, and 19) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 314 Td (protocol checks.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 300 Td (- `03_MDP_Trajectory_Logger.py`: trajectories, discounted returns, empirical transition) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 286 Td (probabilities, CSV loading, and checks.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 272 Td (- `03_Infinite_Loop_Sentinel.py`: state-action hashes, consecutive repetition detection, Floyd) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 258 Td (cycle analysis, and emergency reports.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 244 Td (- `04_System2_Warp_Pilot.py`: safety deliberation, module integration, mission simulation, and) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 230 Td (integration tests.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 216 Td (- `ps06_solution.ipynb`: complete walkthrough, escape and anomaly demonstrations, four) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 202 Td (required master suites, and per-module suites.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 188 Td (- `ps06_part3_data_payload.ipynb`: detailed trajectory, return, transition-matrix, and) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 174 Td (sentinel examples.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 160 Td (- `*_starter.py`: earlier teaching variants. Final `.py` files are the primary) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 146 Td (implementations.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 125 Td (The integrated pilot advances the agent to DELIBERATING, evaluates a proposed action, checks) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 111 Td (its state-action history, advances to ACTING, and dispatches an approved or corrected tool) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 97 Td (request. It stores the decision and resulting observation, logs the reward and next) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 83 Td (environment state, then advances through OBSERVING and REFLECTING. A successful warp completes) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 69 Td (the mission; a budget limit or security tripwire forces HALTED.) Tj ET
+0.40 0.45 0.50 rg BT /F1 8 Tf 48 28 Td (sustkever | Group 17 | Mission 06: Solution Report | Page 1) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 9 0 R >>
+endobj
+9 0 obj
+<< /Length 5277 >>
+stream
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 788 Td (The briefing assigns cycle detection to the Security & Ethics role, while the README and) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 774 Td (starter filenames place its module under Part 3. The final pilot imports that module, so both) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 760 Td (trajectory evaluation and cycle detection are present despite the different role labels.) Tj ET
+0.10 0.24 0.35 rg BT /F2 14 Tf 48 731 Td (3. Part 1: Deterministic agent state machine) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 704 Td (`AgentState` contains exactly IDLE, PERCEIVING, DELIBERATING, ACTING, OBSERVING, REFLECTING,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 690 Td (and HALTED. The `Agent` dataclass stores current state, transition count, maximum budget,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 676 Td (memory, completion status, halt reason, and transition history. Mutable histories are) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 662 Td (allocated independently for each agent.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 641 Td (The transition graph is:) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 620 Td (```text) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 606 Td (IDLE -> PERCEIVING -> DELIBERATING -> ACTING) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 592 Td (     -> OBSERVING -> REFLECTING) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 578 Td (REFLECTING -> DELIBERATING, or HALTED when mission_completed) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 564 Td (HALTED -> terminal) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 550 Td (```) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 529 Td (Each ordinary `step\(\)` call performs one graph transition. The budget accepts only integers) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 515 Td (from 1 through 20, excluding booleans. Once N transitions have been consumed, the next call) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 501 Td (halts without increasing `step_count`. With N=20, a never-completing agent therefore performs) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 487 Td (20 transitions and halts on call 21. Further calls on HALTED change nothing.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 466 Td (Perception input is retained in memory. Normal completion records its reason, and the public) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 452 Td (state field supports the pilot's emergency halt. The self-tests verify the exact enum and) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 438 Td (graph, reflection looping and completion, one transition per call, terminal behavior, budget) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 424 Td (enforcement and validation, independent instance histories, and external forced halting.) Tj ET
+0.10 0.24 0.35 rg BT /F2 14 Tf 48 395 Td (4. Part 2: Tool protocol and error boundary) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 368 Td (The dispatcher exposes `navigate_warp_vector\(x, y, z\)`, `adjust_plasma_shields\(intensity\)`,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 354 Td (and `query_sensor_array\(target\)`. Navigation returns formatted vector coordinates; shield) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 340 Td (adjustment enforces integer intensity from 0 to 100; the sensor function returns canned) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 326 Td (scenario observations.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 305 Td (`ActionDispatcher` accepts a dictionary or a JSON string decoding to an object. It rejects) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 291 Td (unknown tools, missing required arguments, extra arguments, incorrect primitive types, boolean) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 277 Td (values masquerading as numbers, and non-finite numeric coordinates. This is a small validator) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 263 Td (for the contracts used here, rather than a complete general-purpose JSON Schema) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 249 Td (implementation.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 228 Td (Validation and tool execution share an exception boundary. Success returns an `Observation:`) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 214 Td (string. Failure returns a `Tool Execution Error:` string that the caller can retain in) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 200 Td (context. For example, negative shield intensity becomes a caught ValueError observation;) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 186 Td (malformed JSON becomes a JSONDecodeError observation. The process continues so the next) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 172 Td (deliberation can respond to the failure.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 151 Td (All 19 dispatcher checks pass locally, including valid requests and invalid payload cases.) Tj ET
+0.10 0.24 0.35 rg BT /F2 14 Tf 48 122 Td (5. Part 3: Trajectory logging and empirical returns) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 95 Td (`TrajectoryLogger.start_episode\(s0\)` opens an episode. Each `log_step\(action, reward,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 81 Td (next_state\)` records one transition, and `end_episode\(\)` freezes the result into a) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 67 Td (`Trajectory`. For T actions, a valid trajectory has T rewards and T+1 states. The logger) Tj ET
+0.40 0.45 0.50 rg BT /F1 8 Tf 48 28 Td (sustkever | Group 17 | Mission 06: Solution Report | Page 2) Tj ET
+endstream
+endobj
+10 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 11 0 R >>
+endobj
+11 0 obj
+<< /Length 5336 >>
+stream
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 788 Td (rejects invalid episode ordering and non-finite rewards.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 767 Td (The evaluator computes:) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 746 Td (```text) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 732 Td (G_0 = sum\(gamma^t * reward_t\), gamma = 0.95) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 718 Td (G_t = reward_t + gamma * G_\(t+1\)) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 704 Td (```) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 683 Td (Backward accumulation avoids repeatedly calculating powers. For the briefing's rewards `[10,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 669 Td (0, -5, 20]`:) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 648 Td (```text) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 634 Td (G_0 = 10 + 0.95^2 * \(-5\) + 0.95^3 * 20 = 22.635) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 620 Td (Returns to go = [22.635, 13.3, 14.0, 20.0]) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 606 Td (```) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 585 Td (`TransitionModel` estimates `P\(next_state | state, action\)` by dividing each transition count) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 571 Td (by the total count for its state-action pair. Every observed row sums to one. An unobserved) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 557 Td (pair has no estimate and raises KeyError instead of being assigned zero probability.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 536 Td (The repository has no supplied historical jump CSV. Its 56-jump `JUMP_LOG` is explicitly a) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 522 Td (hand-written mock. Example estimates are 0.60 for reaching escape_corridor from dust_lane with) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 508 Td (warp_high_shields, and 0.80 for hull_breach from plasma_shear with warp_low_shields. These are) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 494 Td (arithmetic demonstrations, not measured astronomical probabilities. A real CSV can be loaded) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 480 Td (with columns `state,action,next_state`.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 459 Td (The separate Part 3 notebook also compares illustrative reflex and deliberate episodes. At) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 445 Td (gamma=0.95 their returns are -85.25 and 87.3975; these depend on their chosen rewards and) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 431 Td (differ from the integrated pilot's escape reward sequence.) Tj ET
+0.10 0.24 0.35 rg BT /F2 14 Tf 48 402 Td (6. Cycle detection and emergency tripwire) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 375 Td (The sentinel hashes serialized state, action, and arguments with SHA-256. Sorted JSON keys) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 361 Td (make dictionary order irrelevant; including environment state helps distinguish the same) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 347 Td (action in different situations. A counter provides expected constant-time duplicate lookup) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 333 Td (after serialization and hashing.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 312 Td (The simple `check_loop\(\)` interface detects consecutive identical steps. The extended) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 298 Td (`observe\(\)` additionally reconstructs a deterministic successor relation and applies Floyd's) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 284 Td (tortoise and hare algorithm. Its report includes the hash, consecutive count, total visits,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 270 Td (cycle start and length, tripwire flag, and reason.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 249 Td (The breaker fires on three identical consecutive steps, or on a detected deterministic cycle) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 235 Td (when the current state-action has appeared three times. For `[s1, s2, s3, s1, s2, s3, ...]`,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 221 Td (the cycle starts at index 0, has length 3, and triggers at attempt 7. The integrated caller) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 207 Td (forces HALTED and records a critical `SECURITY VIOLATION`.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 186 Td (Floyd's algorithm assumes a deterministic successor relation. If the observed history gives) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 172 Td (one state-action different successors, this branch declines a cycle verdict; the) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 158 Td (consecutive-repeat rule remains available. The implementation stores history and rebuilds its) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 144 Td (successor map, so the overall monitoring cost is not constant memory or constant time per) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 130 Td (observation. Only the duplicate counter lookup has that expected complexity.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 109 Td (Sentinel checks cover stable hashes, argument and state changes, consecutive repeats, 300) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 95 Td (random deterministic trajectories checked against a reference detector, the required) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 81 Td (three-state cycle, non-looping histories, critical logging, and halting the actual Part 1) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 67 Td (agent.) Tj ET
+0.40 0.45 0.50 rg BT /F1 8 Tf 48 28 Td (sustkever | Group 17 | Mission 06: Solution Report | Page 3) Tj ET
+endstream
+endobj
+12 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 595 842] /Resources << /Font << /F1 3 0 R /F2 4 0 R /F3 5 0 R >> >> /Contents 13 0 R >>
+endobj
+13 0 obj
+<< /Length 4553 >>
+stream
+0.10 0.24 0.35 rg BT /F2 14 Tf 48 788 Td (7. Part 4: System 2 safety and integrated outcomes) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 761 Td (`System2DeliberationEngine` rejects unauthorized actions and invalid shield values, raises low) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 747 Td (shield requests to the 60% safety margin, and blocks warp until shields are ready and the) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 733 Td (escape corridor has been scanned. Corrections preserve the caller's original argument) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 719 Td (dictionary. Successful observations update the engine's knowledge of shields and the corridor.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 698 Td (The escape plan scans the corridor, raises shields, then navigates along `[-0.85, 0.52,) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 684 Td (0.05]`. Verified results are:) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 663 Td (- Final agent state: HALTED, with mission_completed=True.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 649 Td (- State transitions: 14 of the permitted 20.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 635 Td (- Tool observations and logged trajectory actions: 3.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 621 Td (- Rewards: `[-1.0, -1.0, 20.0]`; discounted return: 16.1.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 607 Td (- Security violations: none.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 586 Td (The anomaly demonstration feeds repeated mock state-actions to the sentinel. It halts at) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 572 Td (attempt 7, before the required step-10 threshold, and retains the violation. Anomaly attempts) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 558 Td (are sentinel observations; they should not be confused with the successful mission's) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 544 Td (state-transition count.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 523 Td (The policy is deterministic and uses simulated tools; there is no remote LLM or external) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 509 Td (ship-control connection. The tests establish the demonstrated software behavior within this) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 495 Td (environment.) Tj ET
+0.10 0.24 0.35 rg BT /F2 14 Tf 48 466 Td (8. Verification and reproduction) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 439 Td (All five final Python modules ran successfully in the available Python 3.15 environment. Every) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 425 Td (code cell in `ps06_solution.ipynb` was also executed in order in a fresh Python namespace. Its) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 411 Td (four required master suites passed: state-machine termination, safe protocol errors, the) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 397 Td (22.635 return, and cycle-triggered halting before step 10. The notebook's additional per-part) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 383 Td (suites passed as well.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 362 Td (The notebook was validated by executing its Python cell sources; saved outputs were preserved.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 348 Td (This checks the code path without claiming a fresh Jupyter-kernel run or independently signed) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 334 Td (human review. Logged critical violations in the anomaly tests are expected test outcomes.) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 313 Td (From the repository root:) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 292 Td (```powershell) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 278 Td (Set-Location .\\mission-06) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 264 Td (python .\\01_Agent_State_Machine.py) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 252 Td (python .\\02_Tool_Protocol_Dispatcher.py) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 240 Td (python .\\03_MDP_Trajectory_Logger.py) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 228 Td (python .\\03_Infinite_Loop_Sentinel.py) Tj ET
+0.12 0.14 0.17 rg BT /F3 8.3 Tf 48 216 Td (python .\\04_System2_Warp_Pilot.py) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 204 Td (```) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 183 Td (Open `ps06_solution.ipynb` in a Python Jupyter environment and run all cells for the) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 169 Td (integrated walkthrough. To use a real jump history, run the logger with `--jumps) Tj ET
+0.12 0.14 0.17 rg BT /F1 10 Tf 48 155 Td (path_to_jumps.csv`. The Markdown report and its PDF contain the same report text.) Tj ET
+0.40 0.45 0.50 rg BT /F1 8 Tf 48 28 Td (sustkever | Group 17 | Mission 06: Solution Report | Page 4) Tj ET
+endstream
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000137 00000 n 
+0000000207 00000 n 
+0000000282 00000 n 
+0000000350 00000 n 
+0000000496 00000 n 
+0000005574 00000 n 
+0000005720 00000 n 
+0000011048 00000 n 
+0000011196 00000 n 
+0000016584 00000 n 
+0000016732 00000 n 
+trailer
+<< /Size 14 /Root 1 0 R >>
+startxref
+21337
+%%EOF

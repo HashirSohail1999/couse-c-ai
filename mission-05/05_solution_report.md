@@ -4,7 +4,7 @@
 
 **Group:** sustkever (Group 17)
 **Course:** Conversational AI, Winter Semester 2026/27  
-**Prepared:** 9 November 2026
+**Prepared:** 16 November 2026
 
 ## 1. Mission objective and scope
 
@@ -12,7 +12,7 @@ Mission 05 investigates source-grounded retrieval and response evaluation for AU
 
 This report describes the submitted code, the notebook's retained outputs, and the saved evidence. It covers the entire mission, including incomplete requirements. It does not claim that a complete production GraphRAG system or an integrated end-to-end answer generator has been built. Contributions are credited collectively to the four contributors above; individual task ownership and contribution percentages have not been established.
 
-The local verification for this report reran the NotebookLM CSV consistency check and the Part 4 demonstration. The NumPy-based HNSW and full hybrid benchmarks were not rerun because NumPy is absent from the available Python environment. Recorded results are identified separately below.
+The local verification for this report reran the NotebookLM CSV consistency check and the final Part 4 security self-tests and demonstration. The NumPy-based HNSW and full hybrid benchmarks were not rerun because NumPy is absent from the available Python environment. Recorded results are identified separately below.
 
 ## 2. Files and overall design
 
@@ -23,7 +23,9 @@ The mission contains these principal deliverables:
 - `03_NotebookLM_Grounding_Lab_template.md`: completed lab narrative, recorded responses, citation evidence, refusal probes, audio transcript, and evaluation.
 - `03_NotebookLM_RAG_Audit.py`: standard-library aggregation of citation and probe CSVs, with a consistency check against recorded lab totals.
 - `notebooklm_audit_report.md`: detailed Part 3 findings and limitations.
-- `04_Prompt_Injection_and_RAG_Audit_starter.py`: pattern-based sanitization and token-overlap evaluation demonstration.
+- `04_RAG_Provenance_and_Safety.py`: injection detection, provenance checks, chunk quarantine, lexical RAG Triad scores, candidate claim attribution, structured audit output, and ten self-tests.
+- `04_Security_Ethics_Report.md` and `security_audit.json`: detailed security explanation and a saved demonstration audit.
+- `04_Prompt_Injection_and_RAG_Audit_starter.py`: earlier pattern-based sanitization and token-overlap demonstration.
 - `ps05_solution.ipynb`: executed Part 1 walkthrough and recorded HNSW results. Parts 2 through 4 are not integrated into this notebook.
 - `hnsw_benchmark_results.json`: saved 5,000-vector benchmark configuration and measurements.
 - `citation_audit_*.csv` and `refusal_probes.csv`: badge-level, claim-level, and refusal evidence used by the audit script.
@@ -127,27 +129,39 @@ Audio assessment used transcript text. Delivery, pauses, and interruptions were 
 
 Running `03_NotebookLM_RAG_Audit.py --check` succeeded while preparing this report. It recomputed the CSV totals and matched the script's recorded Section 2.7 totals. This verifies consistency of the stored audit counts, not the correctness of every verdict or a new live NotebookLM session.
 
-## 6. Part 4: Injection sanitization and RAG Triad
+## 6. Part 4: Provenance, injection defense, and RAG Triad
 
-`PromptInjectionSanitizer` compiles seven regular-expression patterns for directives such as ignoring previous instructions, overriding a system prompt, entering developer mode, and revealing internal instructions. Matching substrings are replaced with `[QUARANTINED_ADVERSARIAL_PAYLOAD]`; a boolean reports detection.
+The final implementation is `04_RAG_Provenance_and_Safety.py`. It extends the earlier starter with a `RetrievedChunk` representation, categorized security findings, a provenance barrier, whole-chunk quarantine, lexical evaluation, claim attribution, and structured JSON audit logging.
 
-The supplied example is flagged successfully in the local demonstration. However, the replacement leaves surrounding text, including the instruction to output encryption keys. The routine does not remove the entire chunk. Its flag needs to be handled by a caller; a positive demonstration does not establish protection against paraphrases or arbitrary injection attacks.
+`PromptInjectionDetector` uses regular-expression patterns for instruction overrides, role spoofing, delimiter escapes, exfiltration, hidden Markdown image payloads, and answer manipulation. `ProvenanceBarrier` checks the source against an allowlist and checks its trust flag. Unsafe chunks are excluded from the safe context, and each decision retains the chunk and source IDs and the findings behind it. Pattern matching is a defensive heuristic; it does not establish protection against arbitrary paraphrases or encoded attacks.
 
-The three implemented scores are token-set overlap heuristics:
+`RAGTriadEvaluator` tokenizes lowercase alphanumeric terms, removes stopwords, and uses set overlap. Faithfulness averages the fraction of each answer sentence's terms found in the safe context. Context relevance averages query-term coverage across safe chunks. Answer relevance measures query-term coverage in the answer. These are lexical proxies rather than semantic relevance or entailment tests.
 
-```text
-context_relevance = |query_words intersect context_words| / |query_words|
-faithfulness = |response_words intersect context_words| / |response_words|
-answer_relevance = |query_words intersect response_words| / |query_words|
-```
+`ClaimAttributionAuditor` identifies the best lexical match for each answer sentence, with a default threshold of 0.5. Its output explicitly records `candidate_match` and `semantic_verification: not_performed`, preventing a matching sentence from being mistaken for independently verified support.
 
-Denominators are clamped to at least one. Local demo results were context relevance 0.6667, faithfulness 1.0000, and answer relevance 0.6667. These scores do not establish semantic relevance or claim entailment. Shared words can occur in contradictory statements, and punctuation affects this simple whitespace tokenization.
+The locally verified demonstration retrieves four chunks, retains two, and quarantines two. The final lexical scores are:
 
-Part 4 remains a starter. The reviewed implementation does not provide the briefing's embedding-based detector, dedicated hidden-image exfiltration detection, semantic claim evaluation, or structured per-turn provenance JSON logging. The expected `04_RAG_Provenance_and_Safety.py` deliverable is absent. These are remaining requirements, rather than completed functionality.
+| Metric | Score |
+| --- | --- |
+| Faithfulness | 1.0000 |
+| Context relevance | 0.5000 |
+| Answer relevance | 1.0000 |
+
+The answer sentence is attributed as a candidate match to source `archive_A`, chunk `C001`, with lexical score 1.0. The JSON audit includes the query, supplied answer, counts, security decisions, metric scores, and candidate claim attributions. It evaluates an answer supplied to the pipeline; it does not itself invoke an answer generator after quarantine. The caller must use only safe context when generating an answer.
+
+All ten security self-tests passed locally. They cover instruction overrides, role spoofing, delimiter escapes, exfiltration-related directives, answer manipulation, benign text, unknown provenance, safe context, metric bounds, and end-to-end quarantine.
+
+The earlier starter remains as a teaching variant. It replaces only matching substrings and uses simpler token overlaps; it should not be confused with the final whole-chunk quarantine implementation. The final code still does not implement an embedding-based detector or semantic claim verification. Its saved audit also does not include retrieval similarity scores, so the briefing's complete provenance requirement is not yet satisfied.
+
+### Supplementary audit evidence
+
+Additional saved files extend the original five-query NotebookLM session. Q6 contains seven citation badges (two supported, five partial; strict precision 28.6%). Q7 contains seventeen (six supported, eleven partial; strict precision 35.3%). Neither contains an unsupported badge under the stored verdicts. `citation_audit_probes_run2.csv` contains seven badges, six supported and one partial. `refusal_probes_run2.csv` records seven Refusal outcomes.
+
+These are separate saved observations. The current `03_NotebookLM_RAG_Audit.py --check` aggregates the original Q1-Q5 files and original refusal probes, not these supplementary files. Its 262-badge total and three-probe refusal result must therefore remain distinct from the later evidence. No fresh live NotebookLM session or independent re-evaluation of the saved verdicts was performed while preparing this report.
 
 ## 7. Reproduction
 
-From the repository root, change to the mission directory. Use a Python environment with NumPy for Parts 1 and 2; the notebook additionally imports Matplotlib. Parts 3 and 4 use the standard library.
+From the repository root, change to the mission directory. Use a Python environment with NumPy for Parts 1 and 2; the notebook additionally imports Matplotlib. Parts 3 and 4 use the standard library. The available Python 3.15 runtime was used for their local checks.
 
 ```powershell
 Set-Location .\mission-05
@@ -155,7 +169,8 @@ python .\01_HNSW_Vector_Index.py --quick --out hnsw_local.json
 python .\02_BM25_and_RRF_Combiner.py --quick
 python .\02_BM25_and_RRF_Combiner.py --out hybrid_local.json
 python .\03_NotebookLM_RAG_Audit.py --check
-python .\04_Prompt_Injection_and_RAG_Audit_starter.py
+python .\04_RAG_Provenance_and_Safety.py --test --demo
+python .\04_RAG_Provenance_and_Safety.py --demo --out security_local.json
 ```
 
 For the briefing's 25,000-vector experiment, omit `--quick` and specify a separate output file to preserve saved evidence:
@@ -170,6 +185,6 @@ Part 2's `--quick` runs self-checks without the full benchmark. A fresh Notebook
 
 The repository demonstrates HNSW indexing, BM25/RRF retrieval components, a substantial recorded grounding audit, and an initial injection-scanning and overlap-scoring example. The local audit consistency check and safety demo passed. All mission Python files and the notebook/JSON structure were also checked for syntax or parsing errors during report preparation.
 
-Remaining work includes reconciling the notebook and saved HNSW run, recording a reproducible full-hybrid benchmark, obtaining Document C, independently reviewing AI-assigned audit verdicts, completing the security and provenance requirements, and integrating Parts 2 through 4 into the notebook. Existing blank sign-off fields are not evidence of approval and have not been filled with invented signatures.
+Remaining work includes reconciling the notebook and saved HNSW run, recording a reproducible full-hybrid benchmark, obtaining Document C, independently reviewing AI-assigned audit verdicts, adding embedding-based detection, semantic grounding evaluation, and retrieval similarity scores to the security audit, and integrating Parts 2 through 4 into the notebook. Existing blank sign-off fields are not evidence of approval and have not been filled with invented signatures.
 
 The contributor identity throughout this mission is Syed Hashir Sohail, Yasan Malik, Usman tariq qureshi, and Sufyan Khalid, group sustkever, Group 17. Research-paper authors remain credited as sources. Existing AI-assistance disclosures are retained to describe how audit judgments were produced.
